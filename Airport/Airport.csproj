@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-11_14-30-41.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-28-41.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-29-29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-30-04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-30-26.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-31-11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-31-52.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-32-26.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-33-03.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-33-24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-33-40.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-34-00.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-34-53.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-35-41.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-36-26.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-37-23.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-11-19_14-37-55.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
