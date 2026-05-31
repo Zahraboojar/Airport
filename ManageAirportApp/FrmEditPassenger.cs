@@ -42,7 +42,7 @@ namespace ManageAirportApp
                 datePicker.Value = _passenger.DateOfBirth;
                 nationality = _passenger.Nationality;
             }
-            LoadCountryNamesToComboBox(combNationality, nationality);
+            ComboBoxHelper.LoadCountryNamesToComboBox(combNationality, nationality);
         }
 
         private async void btnSubmit_Click(object sender, EventArgs e)

@@ -56,10 +56,10 @@ namespace ManageAirportApp
             {
                 dpADate.Enabled = dpATime.Enabled = dpDDate.Enabled = dpDTime.Enabled = false;
             }
-            await LoadAircraftToComboBox(combAircraft, aircraftId);
-            await LoadAirportNameToComboBox(combAAirport, aAirportId);
-            await LoadAirportNameToComboBox(combDAirport, dAirportId);
-            await LoadGateToComboBox(combGate, gateId);
+            await ComboBoxHelper.LoadAircraftToComboBox(combAircraft, aircraftId);
+            await ComboBoxHelper.LoadAirportNameToComboBox(combAAirport, aAirportId);
+            await ComboBoxHelper.LoadAirportNameToComboBox(combDAirport, dAirportId);
+            await ComboBoxHelper.LoadGateToComboBox(combGate, gateId);
         }
 
         private async void btnSubmit_Click(object sender, EventArgs e)
@@ -153,47 +153,6 @@ namespace ManageAirportApp
             }
 
         }
-        protected async Task LoadAircraftToComboBox(ComboBox cmb, int id = 0)
-        {
-            var sp = new SelectProperties();
-            var service = ServiceFactory<AircraftService>.Instance;
-            var selected = await service.GetByIdAsync(id);
-            var data = await service.GetAllAvailableAsync(sp, selected.Data);
-            if (data.IsSuccess)
-            {
-                cmb.Items.Clear();
-
-                foreach (var aircraft in data.Data)
-                {
-                    cmb.Items.Add(aircraft.RegistrationNumber);
-                    if (id == aircraft.Id)
-                    {
-                        cmb.SelectedItem = aircraft.RegistrationNumber;
-                    }
-                }
-            }
-        }
-
-        protected async Task LoadGateToComboBox(ComboBox cmb, int id = 0, int terminalId = 0)
-        {
-            var sp = new SelectProperties();
-            var service = ServiceFactory<GateService>.Instance;
-            var gateresult = await service.GetByIdAsync(id);
-            sp.TerminalId = terminalId;
-            var data = await service.GetAllAvaliableAsync(sp, gateresult.Data);
-            if (data.IsSuccess)
-            {
-                cmb.Items.Clear();
-
-                foreach (var gate in data.Data)
-                {
-                    cmb.Items.Add(gate.GateNumber);
-                    if (id == gate.Id)
-                    {
-                        cmb.SelectedItem = gate.GateNumber;
-                    }
-                }
-            }
-        }
+        
     }
 }

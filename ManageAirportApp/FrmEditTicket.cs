@@ -44,33 +44,8 @@ namespace ManageAirportApp
                 combFlightClass.SelectedItem = _ticket.Class;
                 seatNumber = _ticket.SeatNumber;
             }
-            await LoadFlightNumberToComboBox(comFlights, flightId);
-            await LoadPassengerToComboBox(combPassengers, passengerId);
-        }
-
-        private async Task LoadSeatNumberToComboBox(ComboBox cmb, Flight flight, int seatNumber = 0)
-        {
-            if (flight == null) return;
-            var service = ServiceFactory<TicketService>.Instance;
-            var data = await service.GetAllByFlightIdAsync(flight.Id);
-            if (data.IsSuccess)
-            {
-                cmb.Items.Clear();
-                var issetSeatNumbers = ArrayOperations.CalculateDifference(flight.Aircraft.Capacity, data.Data.ToArray());
-                if (seatNumber != 0)
-                {
-                    cmb.Items.Add(seatNumber.ToString());
-                    cmb.SelectedItem = seatNumber.ToString();
-                }
-                foreach (var item in issetSeatNumbers)
-                {
-                    cmb.Items.Add(item);
-                    if (item == seatNumber)
-                    {
-                        cmb.SelectedItem = item;
-                    }
-                }
-            }
+            await ComboBoxHelper.LoadFlightNumberToComboBox(comFlights, flightId);
+            await ComboBoxHelper.LoadPassengerToComboBox(combPassengers, passengerId);
         }
 
         private async void btnSubmit_Click(object sender, EventArgs e)
@@ -130,37 +105,13 @@ namespace ManageAirportApp
             }
             CustomMessageBox.Message(result.Message, result.IsSuccess);
         }
-
-        protected async Task LoadPassengerToComboBox(ComboBox cmb, int id = 0)
-        {
-            var sp = new SelectProperties();
-            var service = ServiceFactory<PassengerService>.Instance;
-            var data = await service.GetAllAsync(sp);
-            if (data.IsSuccess)
-            {
-                cmb.Items.Clear();
-
-                foreach (PassengerDto passenger in data.Data)
-                {
-                    var _fullName = $"{passenger.FirstName} {passenger.LastName}";
-                    ;
-                    var item = $"{_fullName}({passenger.NationalCode})";
-                    cmb.Items.Add(item);
-                    if (passenger.Id == id)
-                    {
-                        cmb.SelectedItem = item;
-                    }
-                }
-            }
-        }
-
         private async void comFlights_SelectedIndexChanged(object sender, EventArgs e)
         {
             var flightService = ServiceFactory<FlightService>.Instance;
             var flightResult = await flightService.GetByFlightNumber(comFlights.SelectedItem.ToString());
             if (flightResult.IsSuccess)
             {
-                await LoadSeatNumberToComboBox(combSeatNum, flightResult.Data, seatNumber);
+                await ComboBoxHelper.LoadSeatNumberToComboBox(combSeatNum, flightResult.Data, seatNumber);
             } else
             {
                 combSeatNum.Items.Clear();

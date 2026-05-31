@@ -40,7 +40,7 @@ namespace ManageAirportApp
                 numericWeight.Value = _baggage.Weight;
                 ticketId = _baggage.TicketId;
             }
-            await LoadTicketToComboBox(combTicket, ticketId);
+            await ComboBoxHelper.LoadTicketToComboBox(combTicket, ticketId);
         }
 
         private async void btnSubmit_Click(object sender, EventArgs e)
@@ -83,25 +83,6 @@ namespace ManageAirportApp
             }
             CustomMessageBox.Message(result.Message, result.IsSuccess);
             Close();
-        }
-        protected async Task LoadTicketToComboBox(ComboBox cmb, int ticketId = 0)
-        {
-            var sp = new SelectProperties();
-            var service = ServiceFactory<TicketService>.Instance;
-            var data = await service.GetAllAsync(sp);
-            if (data.IsSuccess)
-            {
-                cmb.Items.Clear();
-
-                foreach (TicketDto ticket in data.Data)
-                {
-                    cmb.Items.Add(ticket.TicketNumber);
-                    if (ticketId == ticket.Id)
-                    {
-                        cmb.SelectedItem = ticket.TicketNumber;
-                    }
-                }
-            }
         }
     }
 }

@@ -40,14 +40,14 @@ namespace ManageAirportApp
                 Close();
                 return;
             }
-            await LoadFlightNumberToComboBox(combFlight, _flight.Id);
+            await ComboBoxHelper.LoadFlightNumberToComboBox(combFlight, _flight.Id);
 
             int id = 0;
             if (_crewAssigment != null)
             {
                 id = _crewAssigment.Id;
             }
-            await LoadEmployeeUsernameToComboBox(CombEmployee, id);
+            await ComboBoxHelper.LoadEmployeeUsernameToComboBox(CombEmployee, id);
             CombEmployeeRole.Items.AddRange(EnumExtensions.GetsEmployeeRole());
             if (_crewAssigment != null)
             {

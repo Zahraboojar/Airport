@@ -50,7 +50,7 @@ namespace ManageAirportApp
                 txtPassword.Enabled = true;
                 txtRepassword.Enabled = true;
             }
-            await LoadAirportNameToComboBox(combAirport, selectedAirportId);
+            await ComboBoxHelper.LoadAirportNameToComboBox(combAirport, selectedAirportId);
         }
 
         private async void btnSubmit_Click(object sender, EventArgs e)

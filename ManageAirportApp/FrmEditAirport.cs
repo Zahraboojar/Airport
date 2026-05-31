@@ -31,8 +31,8 @@ namespace ManageAirportApp
 
         private void FrmEditAirport_Load(object sender, EventArgs e)
         {
-            LoadCountryNamesToComboBox(combRegion);
-            LoadCitiesNamesToComboBox(combCity, combRegion.SelectedItem.ToString());
+            ComboBoxHelper.LoadCountryNamesToComboBox(combRegion);
+            ComboBoxHelper.LoadCitiesNamesToComboBox(combCity, combRegion.SelectedItem.ToString());
             if (_airport != null)
             {
                 txtIATA_Code.Text = _airport.IATA_Code;
@@ -45,7 +45,7 @@ namespace ManageAirportApp
 
         private void combRegion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadCitiesNamesToComboBox(combCity, combRegion.SelectedItem.ToString());
+            ComboBoxHelper.LoadCitiesNamesToComboBox(combCity, combRegion.SelectedItem.ToString());
         }
 
         private async void button2_Click(object sender, EventArgs e)

@@ -29,5 +29,3 @@ packages/
 # Windows
 Thumbs.db
 Desktop.ini
-
-!ManageAirportApp/bin/Debug/*.json

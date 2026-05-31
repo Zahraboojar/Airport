@@ -55,7 +55,7 @@ namespace ManageAirportApp
                 numericCapacity.Value = _gate.Capacity;
                 terminalName = _gate.Terminal.Name;
             }
-            await LoadTerminalToComboBox(combTerminal, terminalName);
+            await ComboBoxHelper.LoadTerminalToComboBox(combTerminal, terminalName);
         }
 
         private async void button2_Click(object sender, EventArgs e)
@@ -86,26 +86,6 @@ namespace ManageAirportApp
                 result = await service.AddAsync(gate);
             }
             CustomMessageBox.Message(result.Message, result.IsSuccess);
-        }
-
-        protected async Task LoadTerminalToComboBox(ComboBox cmb, string name = "")
-        {
-            var sp = new SelectProperties();
-            var service = ServiceFactory<TerminalService>.Instance;
-            var data = await service.GetAllAsync(sp);
-            if (data.IsSuccess)
-            {
-                cmb.Items.Clear();
-
-                foreach (TerminalDto terminal in data.Data)
-                {
-                    cmb.Items.Add(terminal.Name);
-                    if (name == terminal.Name)
-                    {
-                        cmb.SelectedItem = terminal.Name;
-                    }
-                }
-            }
         }
         protected string[] separateLettersNumbers(string gateNumber)
         {

@@ -20,11 +20,11 @@ namespace ManageAirportApp
         }
         private async void FrmSelectAirport_Load(object sender, EventArgs e)
         {
-            LoadCountryNamesToComboBox(combRegion);
-            LoadCitiesNamesToComboBox(combCity);
+            ComboBoxHelper.LoadCountryNamesToComboBox(combRegion);
+            ComboBoxHelper.LoadCitiesNamesToComboBox(combCity);
             if (combCity.SelectedItem != null)
             {
-                await LoadAirportNameToComboBox(combAirport, 0, combCity.SelectedItem.ToString());
+                await ComboBoxHelper.LoadAirportNameToComboBox(combAirport, 0, combCity.SelectedItem.ToString());
             }
         }
         private void btnBack_Click(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace ManageAirportApp
         {
             if (combRegion.SelectedItem != null)
             {
-                LoadCitiesNamesToComboBox(combCity, combRegion.SelectedItem.ToString());
+                ComboBoxHelper.LoadCitiesNamesToComboBox(combCity, combRegion.SelectedItem.ToString());
             }
         }
 
@@ -81,7 +81,7 @@ namespace ManageAirportApp
         {
             if (combCity.SelectedItem != null)
             {
-                await LoadAirportNameToComboBox(combAirport, 0, combCity.SelectedItem.ToString());
+                await ComboBoxHelper.LoadAirportNameToComboBox(combAirport, 0, combCity.SelectedItem.ToString());
             }
         }
     }

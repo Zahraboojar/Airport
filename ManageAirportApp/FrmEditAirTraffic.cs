@@ -25,7 +25,7 @@ namespace ManageAirportApp
 
         private async void FrmEditAirTraffic_Load(object sender, EventArgs e)
         {
-            await LoadFlightNumberToComboBox(combFlight);
+            await ComboBoxHelper.LoadFlightNumberToComboBox(combFlight);
             combEvent.Items.AddRange(EnumExtensions.GetsAirTrafficsEventType());
         }
 
