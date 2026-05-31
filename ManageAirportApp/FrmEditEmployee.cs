@@ -2,6 +2,7 @@
 using ManageAirportApp.Domain;
 using ManageAirportApp.Service;
 using ManageAirportApp.Share;
+using ManageSchoolApp.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,6 +45,12 @@ namespace ManageAirportApp
                 txtUserName.Text = _employee.UserName;
                 rTxtAddress.Text = _employee.Address;
                 datePicker.Value = _employee.DateOfBirth;
+                if (LoginedUserService.EmployeeId == _employee.Id)
+                {
+                    txtUserName.Enabled = true;
+                    txtPassword.Enabled = true;
+                    txtRepassword.Enabled = true;
+                }
             } else
             {
                 txtUserName.Enabled = true;
@@ -88,6 +95,7 @@ namespace ManageAirportApp
                     employee.Password = passResult.Data;
                 } else
                 {
+                    if (passResult.Message == Messages.EmptyPassfield) return;
                     CustomMessageBox.Error(passResult.Message);
                     return;
                 }
@@ -96,6 +104,7 @@ namespace ManageAirportApp
 
                 if (_employee == null)
                 {
+
                     result = await service.AddAsync(employee);
                 }
                 else

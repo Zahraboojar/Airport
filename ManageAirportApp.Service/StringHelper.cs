@@ -27,6 +27,10 @@ namespace ManageAirportApp.Service
         {
             pass = pass.Trim();
             rePass = rePass.Trim();
+            if (pass == "" && rePass == "")
+            {
+                return OperationResult<string>.Failed(Messages.EmptyPassfield); 
+            }
             if (pass != "" && rePass != "")
             {
                 if (rePass == pass)
@@ -34,6 +38,7 @@ namespace ManageAirportApp.Service
                     return OperationResult<string>.Success(pass);
                     
                 }
+               
             }
             return OperationResult<string>.Failed(Messages.InCorrectPassAndRePass);
         }

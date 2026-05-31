@@ -72,5 +72,6 @@ namespace ManageAirportApp.DAL
         public static string SeatNumberOutOfRange = "شماره صندلی نادرست است. (خارج از محدوده)";
         public static string YouCantDeleteYourSelf = "نمی توانید خودتان را حذف کنید";
         public static string SumOfWeightEqual = "جمع بار چمدان ها یا بار ها برای این بلیت برابر است با ";
+        public static string EmptyPassfield = "فیلد گذرواژه و تکرار آن خالی است";
     }
 }
