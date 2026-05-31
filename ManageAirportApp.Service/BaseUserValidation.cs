@@ -58,7 +58,7 @@ namespace ManageAirportApp.Service
         }
         private static bool IsValidName(string name)
         {
-            return Regex.IsMatch(name, @"^[\u0600-\u06FF\s‌]{2,30}$");
+            return Regex.IsMatch(name, @"^[\u0600-\u06FF\sa-zA-Z]{2,30}$");
         }
         public static OperationResult ValidAll<UserDto>(UserDto userDto)
            where UserDto : BaseUserDto

@@ -98,12 +98,14 @@ namespace ManageAirportApp
             OperationResult result;
             if (_ticket != null)
             {
-                result = await service.UpdateAsync(ticket, _ticket.Id); 
+                result = await service.UpdateAsync(ticket, _ticket.Id);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
             } else
             {
                 result = await service.AddAsync(ticket);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
+                Close();
             }
-            CustomMessageBox.Message(result.Message, result.IsSuccess);
         }
         private async void comFlights_SelectedIndexChanged(object sender, EventArgs e)
         {

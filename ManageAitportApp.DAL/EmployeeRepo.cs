@@ -15,7 +15,7 @@ namespace ManageAirportApp.DAL
         public async Task<OperationResult<Employee>> Login(string username, string password)
         {
             var result = await set
-                .Where(x => x.UserName == username && x.Password == password).SingleOrDefaultAsync();
+                .Where(x => x.UserName == username && x.Password == password ).SingleOrDefaultAsync();
 
             if (result == null)
             {

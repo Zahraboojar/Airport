@@ -81,13 +81,15 @@ namespace ManageAirportApp
             if (_crewAssigment  == null)
             {
                 result = await service.AddAsync(crewAssigment);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
+                Close();
             }
             else
             {
                 result = await service.UpdateAsync(crewAssigment, _crewAssigment.Id);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
             }
-            CustomMessageBox.Message(result.Message, result.IsSuccess);
-            Close();
+            
         }
     }
 }

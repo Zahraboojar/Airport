@@ -30,9 +30,10 @@ namespace ManageAirportApp
             if (result.IsSuccess)
             {
                 CustomMessageBox.Success(Messages.Welcome);
-                mainForm.Show();
-
                 this.Hide();
+                mainForm.ShowDialog();
+
+                Close();
             } else
             {
                 CustomMessageBox.Error(Messages.InCorrectUserNameOrPassWord);

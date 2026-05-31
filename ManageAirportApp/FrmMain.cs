@@ -34,7 +34,6 @@ namespace ManageAirportApp
         }
         private async void FrmMain_Load(object sender, EventArgs e)
         {
-            var service = ServiceFactory<SettingService>.Instance;
             var airportId = LoginedUserService.Employee.AirportId;
             if (airportId == null)
             {
@@ -43,18 +42,19 @@ namespace ManageAirportApp
             {
                 _sp.AirportId = (int)airportId;
             }
-            lblPagination.Text = await mainDvg.SetDataSourceAsync<Flight, FlightService, FlightDto>(_sp);
+            DvgExtentions.GetDashboardType(dBtnFlights.Name, out _current);
+            await LoadCurrentGrid(_sp);
             frmAdd = new FrmEditFlight();
         }
         private void btnLeft_Click(object sender, EventArgs e)
         {
-            _sp.Offset = _sp.Limit * 2;
+            _sp.Offset += _sp.Limit;
             var selectedDBtn = LoadCurrentGrid(_sp);
 
         }
         private void btnRight_Click(object sender, EventArgs e)
         {
-            _sp.Offset = _sp.Limit / 2;
+            _sp.Offset -= _sp.Limit;
             var selectedDBtn = LoadCurrentGrid(_sp);
 
         }
@@ -124,6 +124,7 @@ namespace ManageAirportApp
                     break;
             }
             lblPagination.Text = txt;
+            ChangeBtnEnabled();
         }
         private async void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -186,6 +187,15 @@ namespace ManageAirportApp
                 {
                     await DvgExtentions.DvgBtnAction(_current, data, Actions.AddEmployee);
                 }
+                if (mainDvg.Columns[e.ColumnIndex].Name == "btnPrint")
+                {
+                    var stim = new StimulsoftService();
+                    var ticket = data as TicketDto;
+                    if (ticket != null)
+                    {
+                        await stim.ShowTicket(ticket.Id);
+                    }
+                }
                 if (mainDvg.Columns[e.ColumnIndex].Name == "btnGates")
                 {
                     TerminalDto terminal = data as TerminalDto;
@@ -226,6 +236,35 @@ namespace ManageAirportApp
             var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, mainDvg.RowHeadersWidth, e.RowBounds.Height);
 
             e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+        }
+
+        private void ChangeBtnEnabled()
+        {
+            var parts = lblPagination.Text.Split('/');
+            int all = 1, pagenumber = 1;
+
+            int.TryParse(parts[0], out pagenumber);
+            int.TryParse(parts[1], out all);
+            if (all == 1 && pagenumber == 1)
+            {
+                btnLeft.Enabled = false;
+                btnRight.Enabled = false;
+            }
+            else if (all > pagenumber)
+            {
+                btnLeft.Enabled = true;
+                btnRight.Enabled = true;
+                if (pagenumber == 1)
+                {
+                    btnRight.Enabled = false;
+                }
+            }
+            else if (all == pagenumber)
+            {
+                btnLeft.Enabled = false;
+                if (pagenumber > 1)
+                    btnRight.Enabled = true;
+            }
         }
     }
 }

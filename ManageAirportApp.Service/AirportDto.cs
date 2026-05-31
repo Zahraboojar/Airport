@@ -18,5 +18,6 @@ namespace ManageAirportApp.Service
         public string IATA_Code { get; set; }
         [DvgDisplayName(PersionDictionary.ICAO_Code)]
         public string ICAO_Code { get; set; }
+        public string Logo {  get; set; }
     }
 }

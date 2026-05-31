@@ -24,7 +24,6 @@ namespace ManageAirportApp.DAL
         public DbSet<Gate> Gates { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Passenger> Passengers { get; set; }
-        public DbSet<Setting> Setting { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Terminal> Terminals { get; set; }
         public DbSet<CheckIn> CheckIn { get; set; }
@@ -146,13 +145,6 @@ namespace ManageAirportApp.DAL
                 .HasRequired(l => l.Airport)
                 .WithMany()
                 .HasForeignKey(l => l.AirportId)
-                .WillCascadeOnDelete(false);
-
-            // ====== Setting ======
-            modelBuilder.Entity<Setting>()
-                .HasRequired(s => s.Airport)
-                .WithMany()
-                .HasForeignKey(s => s.AirportId)
                 .WillCascadeOnDelete(false);
 
             //====== employee =======

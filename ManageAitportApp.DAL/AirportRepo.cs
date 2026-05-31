@@ -39,5 +39,15 @@ namespace ManageAirportApp.DAL
                 return OperationResult<Airport>.Failed(Messages.NotFound);
             return OperationResult<Airport>.Success(result);
         }
+        public async Task<OperationResult<Airport>> GetLastAsync(SelectProperties sp)
+        {
+            var result = await set
+                .Where(x => x.IsDeleted == sp.IsDeleted)
+                .OrderByDescending(x => x.Id)
+                .FirstOrDefaultAsync();
+            if (result == null)
+                return OperationResult<Airport>.Failed(Messages.NotFound);
+            return OperationResult<Airport>.Success(result);
+        }
     }
 }

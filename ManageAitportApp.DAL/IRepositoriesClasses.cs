@@ -17,5 +17,6 @@ namespace ManageAitportApp.DAL
         Task<OperationResult> DeleteAsync(TEntity entity);
         Task<OperationResult<List<TEntity>>> GetAllAsync(SelectProperties selectProperties);
         Task<OperationResult<TEntity>> GetByIdAsync(int id = 0, bool isDeleted = false);
+        Task<OperationResult<int>> GetCountAllAsync(bool isDeleted = false);
     }
 }

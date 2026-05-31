@@ -143,13 +143,15 @@ namespace ManageAirportApp
                     flight.ActualDepartureTime = CombineDateTime(dpDDate, dpDTime);
 
                     result = await service.UpdateAsync(flight, _flight.Id);
+                    CustomMessageBox.Message(result.Message, result.IsSuccess);
                 }
                 else
                 {
                     result = await service.AddAsync(flight);
+                    CustomMessageBox.Message(result.Message, result.IsSuccess);
+                    Close();
                 }
-                CustomMessageBox.Message(result.Message, result.IsSuccess);
-                Close();
+                
             }
 
         }

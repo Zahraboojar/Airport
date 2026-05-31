@@ -36,7 +36,10 @@ namespace ManageAirportApp
                 dvg.Columns[property.Name].Visible = attributes != null;
                 
             }
-            if (LoginedUserService.Employee != null)
+            if (LoginedUserService.Employee != null &&
+                (LoginedUserService.Employee.EmployeeType == EmployeeType.Management
+                || LoginedUserService.Employee.EmployeeType == EmployeeType.AirTrafficController)
+                )
             {
                 if (typeof(TEntity) == typeof(Terminal))
                 {
@@ -90,6 +93,16 @@ namespace ManageAirportApp
                         UseColumnTextForButtonValue = true
                     });
                 }
+                if (typeof(TEntity) == typeof(Ticket))
+                {
+                    dvg.Columns.Add(new DataGridViewButtonColumn
+                    {
+                        Name = "btnPrint",
+                        HeaderText = "چاپ",
+                        Text = "چاپ",
+                        UseColumnTextForButtonValue = true
+                    });
+                }
             }
         }
         public static void Empty(this DataGridView dvg)
@@ -105,11 +118,12 @@ namespace ManageAirportApp
             {
                 var service = ServiceFactory<TService>.Instance;
                 var operationResult = await service.GetAllAsync(sp);
+                var countAll = await service.GetCountAllAsync();
 
                 if (operationResult.IsSuccess)
                 {
                     FillDvg<TEntity, TDto>(dvg, operationResult, sp);
-                    txt = SetPaginationText(sp.Limit, sp.Offset, operationResult.Data.Count);
+                    txt = SetPaginationText(sp.Limit, sp.Offset, countAll.Data);
                 }
                 else
                 {
@@ -147,11 +161,20 @@ namespace ManageAirportApp
         }
         private static string SetPaginationText(int limit, int offset, int count)
         {
-            int all = count / limit == 0? 1: count / limit;
-            int pageNumber = all - ((count - offset) / limit);
+            if (count <= 0)
+            {
+                return "1/1";
+            }
+            int allPages = (int)Math.Ceiling((double)count / limit);
 
-            return $"{pageNumber} / {all}";
+            int currentPageNumber = (offset / limit) + 1;
+
+            currentPageNumber = Math.Max(1, currentPageNumber);
+            currentPageNumber = Math.Min(allPages, currentPageNumber);
+
+            return $"{currentPageNumber}/{allPages}";
         }
+
         public static DashboardType GetDashboardType(string btnName, out DashboardType _current)
         {
             switch (btnName)

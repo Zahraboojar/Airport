@@ -95,24 +95,26 @@ namespace ManageAirportApp
                     employee.Password = passResult.Data;
                 } else
                 {
-                    if (passResult.Message == Messages.EmptyPassfield) return;
-                    CustomMessageBox.Error(passResult.Message);
-                    return;
+                    if (passResult.Message != Messages.EmptyPassfield)
+                    {
+                        CustomMessageBox.Error(passResult.Message);
+                        return;
+                    }
                 }
-
-                OperationResult result;
 
                 if (_employee == null)
                 {
 
-                    result = await service.AddAsync(employee);
+                    var result = await service.AddAsync(employee);
+                    CustomMessageBox.Message(result.Message, result.IsSuccess);
+                    Close();
                 }
                 else
                 {
-                    result = await service.UpdateAsync(employee, _employee.Id);
+                    var result = await service.UpdateAsync(employee, _employee.Id);
+                    CustomMessageBox.Message(result.Message, result.IsSuccess);
                 }
-                CustomMessageBox.Message(result.Message, result.IsSuccess);
-                Close();
+                
             }
             else
             {

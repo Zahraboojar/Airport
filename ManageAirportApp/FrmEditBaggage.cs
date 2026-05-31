@@ -76,13 +76,13 @@ namespace ManageAirportApp
             if (_baggage == null)
             {
                 result = await service.AddAsync(baggage);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
+                Close();
             } else
             {
                 result = await service.UpdateAsync(baggage, _baggage.Id);
-                
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
             }
-            CustomMessageBox.Message(result.Message, result.IsSuccess);
-            Close();
         }
     }
 }

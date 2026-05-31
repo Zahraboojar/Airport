@@ -249,24 +249,24 @@
             this.btnRight.BackgroundImage = global::ManageAirportApp.Properties.Resources.right;
             this.btnRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRight.Enabled = false;
             this.btnRight.Location = new System.Drawing.Point(313, 3);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(46, 51);
             this.btnRight.TabIndex = 0;
             this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // btnLeft
             // 
             this.btnLeft.BackgroundImage = global::ManageAirportApp.Properties.Resources.left;
             this.btnLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLeft.Enabled = false;
             this.btnLeft.Location = new System.Drawing.Point(132, 3);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(46, 51);
             this.btnLeft.TabIndex = 1;
             this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // lblPagination
             // 

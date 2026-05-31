@@ -47,11 +47,13 @@ namespace ManageAirportApp
             if (_terminal != null)
             {
                 result = await service.UpdateAsync(treminal, _terminal.Id);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
             } else
             {
                 result = await service.AddAsync(treminal);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
+                Close();
             }
-            CustomMessageBox.Message(result.Message, result.IsSuccess);
         }
     }
 }

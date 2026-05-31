@@ -41,7 +41,6 @@ namespace ManageAirportApp
 
         private async void txtSubmit_Click(object sender, EventArgs e)
         {
-            OperationResult result;
             AircraftDto aircraft = new AircraftDto
             {
                 ManufacturerName = txtMenuFactorerName.Text,
@@ -52,13 +51,15 @@ namespace ManageAirportApp
             };
             if (_aircraft == null)
             {
-                result = await service.AddAsync(aircraft);
+                var result = await service.AddAsync(aircraft);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
+                Close();
             }
             else
             {
-                result = await service.UpdateAsync(aircraft,_aircraft.Id);
+                var result = await service.UpdateAsync(aircraft, _aircraft.Id);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
             }
-            CustomMessageBox.Message(result.Message, result.IsSuccess);
         }
 
     }

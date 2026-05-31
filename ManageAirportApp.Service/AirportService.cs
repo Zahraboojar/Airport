@@ -33,6 +33,7 @@ namespace ManageAirportApp.Service
                     Region = airportDto.Region,
                     IATA_Code = airportDto.IATA_Code,
                     ICAO_Code = airportDto.ICAO_Code,
+                    Logo = null,
                     CreatedById = LoginedUserService.EmployeeId
                 };
                 return await _repo.AddAsync(airport);
@@ -61,6 +62,7 @@ namespace ManageAirportApp.Service
                     existingAirport.Region = airportDto.Region;
                     existingAirport.IATA_Code = airportDto.IATA_Code;
                     existingAirport.ICAO_Code = airportDto.ICAO_Code;
+                    existingAirport.Logo = airportDto.Logo;
 
                     existingAirport.UpdatedById = LoginedUserService.EmployeeId;
                     existingAirport.UpdatedAt = DateTime.Now;

@@ -10,7 +10,7 @@ namespace ManageAirportApp.DAL
     {
         public bool IsDeleted { get; set; } = false;
         public int Offset { get; set; } = 0;
-        public int Limit { get; set; } = 20;
+        public int Limit { get; set; } = 10;
         public string SearchText { get; set; } = "";
         public int AirportId { get; set; } = 0;
         public int TerminalId { get; set; } = 0;

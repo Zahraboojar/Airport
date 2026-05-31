@@ -14,6 +14,7 @@ namespace ManageAirportApp.Domain
         public string Tel { get; set; }
         public string IATA_Code { get; set; }
         public string ICAO_Code { get; set; }
+        public string Logo { get; set; }
 
     }
 }

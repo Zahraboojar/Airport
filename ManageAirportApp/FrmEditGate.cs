@@ -81,11 +81,13 @@ namespace ManageAirportApp
             if (_gate != null)
             {
                 result = await service.UpdateAsync(gate, _gate.Id);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
             } else
             {
                 result = await service.AddAsync(gate);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
+                Close();
             }
-            CustomMessageBox.Message(result.Message, result.IsSuccess);
         }
         protected string[] separateLettersNumbers(string gateNumber)
         {

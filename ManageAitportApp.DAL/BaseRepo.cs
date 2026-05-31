@@ -41,7 +41,7 @@ namespace ManageAitportApp.DAL
 
         }
 
-        public async Task<OperationResult<TEntity>> GetByIdAsync(int id, bool isDeleted)
+        public virtual async Task<OperationResult<TEntity>> GetByIdAsync(int id, bool isDeleted)
         {
             var entity = await set
                                 .Where(x => x.Id == id && x.IsDeleted == isDeleted)
@@ -70,6 +70,16 @@ namespace ManageAitportApp.DAL
             await airportDB.SaveChangesAsync();
 
             return OperationResult.Success(Messages.UpdatedSuccessfully);
+        }
+
+        public async Task<OperationResult<int>> GetCountAllAsync(bool isDeleted = false)
+        {
+            var count = await set.Where(x => x.IsDeleted == isDeleted).CountAsync();
+
+            if (count == null)
+                return OperationResult<int>.Failed(Messages.NotFound);
+
+            return OperationResult<int>.Success(count);
         }
     }
 }

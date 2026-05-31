@@ -48,5 +48,10 @@ namespace ManageAirportApp.Service
             return OperationResult<List<TEntity>>.Success(result.Data);
         }
         protected abstract TDto MapEntityToDto(TEntity entity);
+
+        public async Task<OperationResult<int>> GetCountAllAsync(bool isDeleted = false)
+        {
+            return await _repo.GetCountAllAsync(isDeleted);
+        }
     }
 }

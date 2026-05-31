@@ -179,11 +179,14 @@
     <Compile Include="Migrations\202605240755308_updatedb1.Designer.cs">
       <DependentUpon>202605240755308_updatedb1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202605310853480_deleteSettingTable.cs" />
+    <Compile Include="Migrations\202605310853480_deleteSettingTable.Designer.cs">
+      <DependentUpon>202605310853480_deleteSettingTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PassengerRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectProperties.cs" />
-    <Compile Include="SettingRepo.cs" />
     <Compile Include="TerminalRepo.cs" />
     <Compile Include="TicketRepo.cs" />
   </ItemGroup>
@@ -264,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202605240755308_updatedb1.resx">
       <DependentUpon>202605240755308_updatedb1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202605310853480_deleteSettingTable.resx">
+      <DependentUpon>202605310853480_deleteSettingTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,7 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ManageAirportApp
 {
-    public partial class FrmEditAirport : BaseFrm
+    public partial class FrmEditAirport : Form
     {
         public AirportDto _airport = null;
         AirportService service = ServiceFactory<AirportService>.Instance;
@@ -73,12 +73,12 @@ namespace ManageAirportApp
             if (result.IsSuccess)
             {
                 CustomMessageBox.Success(result.Message);
+                Close();
             }
             else
             {
                 CustomMessageBox.Error(result.Message);
             }
-            Close();
         }
     }
 }

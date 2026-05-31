@@ -64,12 +64,15 @@ namespace ManageAirportApp
             if (_passenger != null)
             {
                 result = await service.UpdateAsync(passenger, _passenger.Id);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
             }
             else
             {
                 result = await service.AddAsync(passenger);
+                CustomMessageBox.Message(result.Message, result.IsSuccess);
+                Close();
             }
-            CustomMessageBox.Message(result.Message, result.IsSuccess);
+            
         }
     }
 }

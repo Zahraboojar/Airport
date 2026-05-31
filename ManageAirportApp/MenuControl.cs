@@ -1,10 +1,12 @@
-﻿using ManageAirportApp.Service;
+﻿using ManageAirportApp.Domain;
+using ManageAirportApp.Service;
 using ManageSchoolApp.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +20,27 @@ namespace ManageAirportApp
 
         Image menuIcon = ThemeManager.MenuIcon;
 
-        private void MenuControl_Load(object sender, EventArgs e)
+        public void MenuControl_Load(object sender, EventArgs e)
         {
+            if (this.DesignMode)
+                return;
             lblTime.Text = DateTime.Now.ToString();
-            lblTitle.Text = LoginedUserService.Employee.Airport.Name;
+            if (LoginedUserService.Employee.Airport != null)
+            {
+                lblTitle.Text = LoginedUserService.Employee.Airport.Name;
+                string logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", LoginedUserService.Employee.Airport.Logo);
+
+                if (File.Exists(logoPath))
+                {
+                    if (pictureBox1.Image != null)
+                    {
+                        pictureBox1.Image.Dispose();
+                        pictureBox1.Image = null;
+                    }
+
+                    pictureBox1.Image = Image.FromFile(logoPath);
+                }
+            }
         }
         public MenuControl()
         {
@@ -29,7 +48,6 @@ namespace ManageAirportApp
             ThemeManager.ApplyTheme(this.FindForm());
             SetImages();
         }
-
         private void btnMenu_Click(object sender, EventArgs e)
         {
             if (tlpMenuItem.Visible)
