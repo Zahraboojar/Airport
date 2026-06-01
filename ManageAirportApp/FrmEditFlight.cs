@@ -21,6 +21,7 @@ namespace ManageAirportApp
         public FrmEditFlight()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
         public FrmEditFlight(FlightDto flightInfo)
         {

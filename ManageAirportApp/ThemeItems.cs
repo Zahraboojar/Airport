@@ -23,6 +23,7 @@ namespace ManageAirportApp
         public static Image OpenTrashIcon { get; set; }
         public static Image LogoIcon { get; set; }
         public static Image RefreshIcon { get; set; }
+        public static Image LogsIcon { get; set; }
         public static Color BackgroundColor { get; set; }
         public static Color FormBackgroundColor { get; set; }
         public static Color ForeColor { get; set; }

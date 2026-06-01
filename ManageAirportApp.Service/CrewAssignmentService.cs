@@ -27,7 +27,13 @@ namespace ManageAirportApp.Service
                 EmployeeId = entity.EmployeeId,
                 CreatedById = LoginedUserService.EmployeeId
             };
-            return await _repo.AddAsync(crewAssignment);
+            var result = await _repo.AddAsync(crewAssignment);
+            if (result.IsSuccess)
+            {
+                await SetLogs.SetCrewAssignment(Actions.Add,
+                    $"کارمند {entity.EmployeeFullName} در پرواز {entity.FlightNumber} به {entity.Role} اختصاص داده شد");
+            }
+            return result;
         }
 
         public async Task<OperationResult> UpdateAsync(CrewAssignmentDto entity, int id)
@@ -44,7 +50,13 @@ namespace ManageAirportApp.Service
                 existingCrewAssignment.UpdatedById = LoginedUserService.EmployeeId;
                 existingCrewAssignment.UpdatedAt = DateTime.Now;
 
-                return await _repo.UpdateAsync(existingCrewAssignment);
+                var result = await _repo.UpdateAsync(existingCrewAssignment);
+                if (result.IsSuccess)
+                {
+                    await SetLogs.SetCrewAssignment(Actions.Update,
+                        $"کارمند {entity.EmployeeFullName} در پرواز {entity.FlightNumber} سمت به {entity.Role}  ویرایش شد");
+                }
+                return result;
             }
             else
             {

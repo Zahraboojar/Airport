@@ -29,7 +29,12 @@ namespace ManageAirportApp.Service
                 EventTime = airTrafficDto.EventTime,
                 CreatedById = LoginedUserService.EmployeeId
             };
-            return await _repo.AddAsync(airTraffic);
+            var result = await _repo.AddAsync(airTraffic);
+            if (result.IsSuccess)
+            {
+                await SetLogs.SetAirTraffic(Actions.Add, "یک مورد اضافه شد");
+            }
+            return result;
         }
         protected override AirTrafficDto MapEntityToDto(AirTraffic entity)
         {

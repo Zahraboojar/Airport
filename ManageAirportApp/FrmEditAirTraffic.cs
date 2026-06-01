@@ -21,6 +21,7 @@ namespace ManageAirportApp
         public FrmEditAirTraffic()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
 
         private async void FrmEditAirTraffic_Load(object sender, EventArgs e)

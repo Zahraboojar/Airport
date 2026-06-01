@@ -32,10 +32,16 @@ namespace ManageAirportApp
                      HeaderText = attributes != null ? attributes.DisplayName: property.Name,
                     Name = property.Name,
                  });
-    
                 dvg.Columns[property.Name].Visible = attributes != null;
                 
             }
+            if (typeof(TEntity) == typeof(Log))
+            {
+                dvg.Columns["IsDeleted"].Visible = false;
+                dvg.Columns["DeletedByName"].Visible = false;
+                dvg.Columns["DeletedAt"].Visible = false;
+            }
+
             if (LoginedUserService.Employee != null &&
                 (LoginedUserService.Employee.EmployeeType == EmployeeType.Management
                 || LoginedUserService.Employee.EmployeeType == EmployeeType.AirTrafficController)
@@ -51,21 +57,23 @@ namespace ManageAirportApp
                         UseColumnTextForButtonValue = true
                     });
                 }
-
-                dvg.Columns.Add(new DataGridViewButtonColumn
+                if (typeof(TEntity) != typeof(Log))
                 {
-                    Name = "btnUpdate",
-                    HeaderText = "عملیات ویرایش",
-                    Text = "ویرایش",
-                    UseColumnTextForButtonValue = true
-                });
-                dvg.Columns.Add(new DataGridViewButtonColumn
-                {
-                    Name = "btnDelete",
-                    HeaderText = "عملیات حذف",
-                    Text = "حذف",
-                    UseColumnTextForButtonValue = true
-                });
+                    dvg.Columns.Add(new DataGridViewButtonColumn
+                    {
+                        Name = "btnUpdate",
+                        HeaderText = "عملیات ویرایش",
+                        Text = "ویرایش",
+                        UseColumnTextForButtonValue = true
+                    });
+                    dvg.Columns.Add(new DataGridViewButtonColumn
+                    {
+                        Name = "btnDelete",
+                        HeaderText = "عملیات حذف",
+                        Text = "حذف",
+                        UseColumnTextForButtonValue = true
+                    });
+                }
 
                 if (sp.IsDeleted)
                 {
@@ -165,9 +173,16 @@ namespace ManageAirportApp
             {
                 return "1/1";
             }
-            int allPages = (int)Math.Ceiling((double)count / limit);
-
-            int currentPageNumber = (offset / limit) + 1;
+            int allPages = 1;
+            if (count != 0)
+            {
+                allPages = (int)Math.Ceiling((double)count / limit);
+            }
+            int currentPageNumber = 1;
+            if (offset != 0)
+            {
+                currentPageNumber = (offset / limit) + 1;
+            }
 
             currentPageNumber = Math.Max(1, currentPageNumber);
             currentPageNumber = Math.Min(allPages, currentPageNumber);

@@ -22,6 +22,7 @@ namespace ManageAirportApp
         public FrmEditTicket()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
         public FrmEditTicket(TicketDto ticketInfo)
         {

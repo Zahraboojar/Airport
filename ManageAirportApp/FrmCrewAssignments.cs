@@ -23,6 +23,7 @@ namespace ManageAirportApp
         {
             _flight = flight;
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
 
         private async void FrmCrewAssignments_Load(object sender, EventArgs e)

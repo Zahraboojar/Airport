@@ -94,5 +94,10 @@ namespace ManageAirportApp
             btnProfile.BackgroundImage = ThemeManager.UserIcon;
             btnThem.BackgroundImage = ThemeManager.ThemeIcon;
         }
+
+        private void btnLogs_Click(object sender, EventArgs e)
+        {
+            new FrmLogs().ShowDialog();
+        }
     }
 }

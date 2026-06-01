@@ -38,7 +38,12 @@ namespace ManageAirportApp.Service
                     PassportNumber = entity.PassportNumber,
                     CreatedById = LoginedUserService.EmployeeId
                 };
-                return await _repo.AddAsync(employee);
+                var result = await _repo.AddAsync(employee);
+                if (result.IsSuccess)
+                {
+                    await SetLogs.SetEmployee(Actions.Add, "یک کارمند اضافه شد");
+                }
+                return result;
             }
             return validateResult;
         }
@@ -61,7 +66,10 @@ namespace ManageAirportApp.Service
                     existingEmployee.AirportId = entity.AirportId;
                     existingEmployee.EmployeeType = EnumExtensions.GetEmployeeType(entity.EmployeeType);
                     existingEmployee.UserName = entity.UserName;
-                    existingEmployee.Password = entity.Password;
+                    if (existingEmployee.Password != "" || existingEmployee.Password != null)
+                    {
+                        existingEmployee.Password = entity.Password;
+                    }
                     existingEmployee.FirstName = entity.FirstName;
                     existingEmployee.LastName = entity.LastName;
                     existingEmployee.NationalCode = entity.NationalCode;
@@ -72,7 +80,12 @@ namespace ManageAirportApp.Service
                     existingEmployee.UpdatedById = LoginedUserService.EmployeeId;
                     existingEmployee.UpdatedAt = DateTime.Now;
 
-                    return await _repo.UpdateAsync(existingEmployee);
+                    var result = await _repo.UpdateAsync(existingEmployee);
+                    if (result.IsSuccess)
+                    {
+                        await SetLogs.SetEmployee(Actions.Update, $"کارمند {entity.FirstName} {entity.LastName} ویرایش شد");
+                    }
+                    return result;
                 }
                 return validateResult;
             }

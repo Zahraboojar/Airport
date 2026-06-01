@@ -36,7 +36,12 @@ namespace ManageAirportApp.Service
                     PassportNumber = entity.PassportNumber,
                     CreatedById = LoginedUserService.EmployeeId
                 };
-                return await _repo.AddAsync(passenger);
+                var result = await _repo.AddAsync(passenger);
+                if (result.IsSuccess)
+                {
+                    await SetLogs.SetPassenger(Actions.Add, "یک مسافر اضافه شد");
+                }
+                return result;
             }
             return validateResult;
         }
@@ -68,7 +73,12 @@ namespace ManageAirportApp.Service
                     existingPassenger.UpdatedById = LoginedUserService.EmployeeId;
                     existingPassenger.UpdatedAt = DateTime.Now;
 
-                    return await _repo.UpdateAsync(existingPassenger);
+                    var result = await _repo.UpdateAsync(existingPassenger);
+                    if (result.IsSuccess)
+                    {
+                        await SetLogs.SetPassenger(Actions.Update, $"مسافر {entity.FirstName} {entity.LastName} ویرایش شد");
+                    }
+                    return result;
                 }
                 return validateResult;
             }

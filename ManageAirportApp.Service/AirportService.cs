@@ -35,8 +35,13 @@ namespace ManageAirportApp.Service
                     ICAO_Code = airportDto.ICAO_Code,
                     Logo = null,
                     CreatedById = LoginedUserService.EmployeeId
-                };
-                return await _repo.AddAsync(airport);
+                };  
+                var result = await _repo.AddAsync(airport);
+                if (result.IsSuccess)
+                {
+                    await SetLogs.SetAirport(Actions.Add, $"فرودگاه {airport.Name} اضافه شد");
+                }
+                return result;
             }
             return validateResult;
         }
@@ -67,7 +72,12 @@ namespace ManageAirportApp.Service
                     existingAirport.UpdatedById = LoginedUserService.EmployeeId;
                     existingAirport.UpdatedAt = DateTime.Now;
 
-                    return await _repo.UpdateAsync(existingAirport);
+                    var result = await _repo.UpdateAsync(existingAirport);
+                    if (result.IsSuccess)
+                    {
+                        await SetLogs.SetAirport(Actions.Update, $"فرودگاه {airportDto.Name} ویرایش شد");
+                    }
+                    return result;
                 }
                 return validateResult;
             }

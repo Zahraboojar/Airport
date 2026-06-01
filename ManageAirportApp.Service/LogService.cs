@@ -14,10 +14,9 @@ namespace ManageAirportApp.Service
 {
     public class LogService : BaseGetMethods<Log, LogRepo, LogDto>, IAddService<Log, LogDto>
     {
-        protected static LogRepo logRepo;
-        public LogService() : base (logRepo)
+        static private LogRepo repo = new LogRepo();
+        public LogService() : base(repo)
         {
-            logRepo = new LogRepo();
         }
         public async Task<OperationResult> AddAsync(LogDto data)
         {
@@ -26,15 +25,15 @@ namespace ManageAirportApp.Service
                 Action = EnumExtensions.GetLogAction(data.Action),
                 TableName = data.TableName,
                 Description = data.Description,
-                AirportId = data.AirportId,
+                AirportId = LoginedUserService.Employee.AirportId == null ? 0 :(int)LoginedUserService.Employee.AirportId,
                 CreatedById = LoginedUserService.EmployeeId
             };
-            return await logRepo.AddAsync(newLog);
+            return await _repo.AddAsync(newLog);
         }
         public async Task<OperationResult> DeleteLastMounthAsync()
         {
             DateTime thirtyDaysAgo = DateTime.Now.AddDays(-30);
-            return await logRepo.DeleteLastMounthAsync(thirtyDaysAgo);
+            return await _repo.DeleteLastMounthAsync(thirtyDaysAgo);
         }
 
         protected override LogDto MapEntityToDto(Log entity)

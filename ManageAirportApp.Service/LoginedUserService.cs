@@ -1,5 +1,6 @@
-﻿using ManageAirportApp.Domain;
-using ManageAirportApp.DAL;
+﻿using ManageAirportApp.DAL;
+using ManageAirportApp.Domain;
+using ManageAirportApp.Service;
 using ManageAirportApp.Share;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace ManageSchoolApp.Service
             {
                 EmployeeId = result.Data.Id;
                 Employee = result.Data;
+                await SetLogs.SetLogin();
                 return OperationResult.Success();
             }
             return OperationResult.Failed(result.Message);

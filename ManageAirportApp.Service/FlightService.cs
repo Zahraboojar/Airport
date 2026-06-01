@@ -38,7 +38,12 @@ namespace ManageAirportApp.Service
                     GateId = entity.GateId,
 
                 };
-                return await _repo.AddAsync(flight);
+                var result = await _repo.AddAsync(flight);
+                if (result.IsSuccess)
+                {
+                    await SetLogs.SetFlight(Actions.Add, "یک پرواز اضافه شد");
+                }
+                return result;
             }
             return validateResult;
         }
@@ -58,13 +63,17 @@ namespace ManageAirportApp.Service
                 existingFlight.Aircraft = null;
                 existingFlight.ArrivalAirportId = entity.ArrivalAirportId;
                 existingFlight.DepartureAirportId = entity.DepartureAirportId;
-                existingFlight.FlightNumber = entity.FlightNumber;
                 existingFlight.GateId = entity.GateId;
                 existingFlight.Gate = null;
                 existingFlight.UpdatedById = LoginedUserService.EmployeeId;
                 existingFlight.UpdatedAt = DateTime.Now;
 
-                return await _repo.UpdateAsync(existingFlight);
+                var result = await _repo.UpdateAsync(existingFlight);
+                if (result.IsSuccess)
+                {
+                    await SetLogs.SetFlight(Actions.Update, $" پرواز {entity.FlightNumber} ویرایش شد");
+                }
+                return result;
             }
             else
             {

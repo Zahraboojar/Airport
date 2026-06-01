@@ -25,9 +25,15 @@ namespace ManageAirportApp.Service
                 GateNumber = entity.GateNumber,
                 Capacity = entity.Capacity,
                 TerminalId = entity.TerminalId,
+                Terminal = null,
                 CreatedById = LoginedUserService.EmployeeId
             };
-            return await _repo.AddAsync(gate);
+            var result = await _repo.AddAsync(gate);
+            if (result.IsSuccess)
+            {
+                await SetLogs.SetGate(Actions.Add, $"یک گیت به ترمینال {entity.Terminal.Name} اضافه شد");
+            }
+            return result;
         }
 
         public async Task<OperationResult<Gate>> GetByGateNumberAsync(string gateNumber)
@@ -67,10 +73,16 @@ namespace ManageAirportApp.Service
                 existingGate.GateNumber = entity.GateNumber;
                 existingGate.Capacity = entity.Capacity;
                 existingGate.TerminalId = entity.TerminalId;
+                existingGate.Terminal = null;
                 existingGate.UpdatedById = LoginedUserService.EmployeeId;
                 existingGate.UpdatedAt = DateTime.Now;
 
-                return await _repo.UpdateAsync(existingGate);
+                var result = await _repo.UpdateAsync(existingGate);
+                if (result.IsSuccess)
+                {
+                    await SetLogs.SetGate(Actions.Update, $"گیت {entity.GateNumber} ویرایش شد");
+                }
+                return result;
             }
             else
             {

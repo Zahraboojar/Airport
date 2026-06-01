@@ -26,7 +26,12 @@ namespace ManageAirportApp.Service
                 Name = entity.Name,
                 CreatedById = LoginedUserService.EmployeeId
             };
-            return await _repo.AddAsync(terminal);
+            var result = await _repo.AddAsync(terminal);
+            if (result.IsSuccess)
+            {
+                await SetLogs.SetTerminal(Actions.Add, "یک ترمینال اضافه شد");
+            }
+            return result;
         }
 
         public async Task<OperationResult<Terminal>> GetByNameAsync(string name)
@@ -46,7 +51,12 @@ namespace ManageAirportApp.Service
                 existingterminal.UpdatedAt = DateTime.Now;
                 existingterminal.UpdatedById = LoginedUserService.EmployeeId;
 
-                return await _repo.UpdateAsync(existingterminal);
+                var result = await _repo.UpdateAsync(existingterminal);
+                if (result.IsSuccess)
+                {
+                    await SetLogs.SetTerminal(Actions.Update, $"ترمینال {entity.Name} ویرایش شد");
+                }
+                return result;
             }
             return OperationResult.Failed(Messages.NotFoundEntity);
         }

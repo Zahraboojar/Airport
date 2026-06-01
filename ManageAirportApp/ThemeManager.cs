@@ -113,6 +113,7 @@ namespace ManageAirportApp
             TrashIcon = Properties.Resources.trash;
             OpenTrashIcon = Properties.Resources.opentrash;
             RefreshIcon = Properties.Resources.refresh;
+            LogsIcon = Properties.Resources.log;
 
             Theme = true;
         }
@@ -133,7 +134,7 @@ namespace ManageAirportApp
             TrashIcon = Properties.Resources.trashDark;
             RefreshIcon = Properties.Resources.refreshDark;
             OpenTrashIcon = Properties.Resources.opentrashDark;
-
+            LogsIcon = Properties.Resources.logDark;
 
             Theme = false;
         }

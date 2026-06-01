@@ -20,6 +20,7 @@ namespace ManageAirportApp
         public FrmEditPassenger()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
         public FrmEditPassenger(PassengerDto passengerInfo)
         {
@@ -70,7 +71,10 @@ namespace ManageAirportApp
             {
                 result = await service.AddAsync(passenger);
                 CustomMessageBox.Message(result.Message, result.IsSuccess);
-                Close();
+                if (result.IsSuccess)
+                {
+                    Close();
+                }
             }
             
         }

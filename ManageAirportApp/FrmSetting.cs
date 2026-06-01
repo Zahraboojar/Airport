@@ -19,6 +19,7 @@ namespace ManageAirportApp
         public FrmSetting()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
 
         private void FrmSetting_Load(object sender, EventArgs e)

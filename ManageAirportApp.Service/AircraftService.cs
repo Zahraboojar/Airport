@@ -36,7 +36,12 @@ namespace ManageAirportApp.Service
                     existingAircraft.UpdatedById = LoginedUserService.EmployeeId;
                     existingAircraft.UpdatedAt = DateTime.Now;
 
-                    return await _repo.UpdateAsync(existingAircraft);
+                    var result = await _repo.UpdateAsync(existingAircraft);
+                    if (result.IsSuccess)
+                    {
+                        await SetLogs.SetAircraft(Actions.Update, $"هواپیمای {existingAircraft.RegistrationNumber} ویرایش شد");
+                    }
+                    return result;
                 }
                 return validateResult;
             }
@@ -59,7 +64,12 @@ namespace ManageAirportApp.Service
                     Capacity = aircraftDto.Capacity,
                     CreatedById = LoginedUserService.EmployeeId
                 };
-                return await _repo.AddAsync(aircraft);
+                var result = await _repo.AddAsync(aircraft);
+                if (result.IsSuccess)
+                {
+                    await SetLogs.SetAircraft(Actions.Update, $"هواپیمای {aircraft.RegistrationNumber} اضافه شد");
+                }
+                return result;
             }
             return validateResult;
         }

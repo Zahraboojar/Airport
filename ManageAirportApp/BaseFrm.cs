@@ -19,13 +19,13 @@ namespace ManageAirportApp
     {
         public BaseFrm()
         {
-            ThemeManager.ApplyTheme(this);
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
 
         private void BaseFrm_Load(object sender, EventArgs e)
         {
-             foreach (Control control in this.Controls)
+            foreach (Control control in this.Controls)
             {
                 ThemeManager.ApplyTheme(control);
             }

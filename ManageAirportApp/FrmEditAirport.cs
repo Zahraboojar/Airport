@@ -15,13 +15,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ManageAirportApp
 {
-    public partial class FrmEditAirport : Form
+    public partial class FrmEditAirport : BaseFrm
     {
         public AirportDto _airport = null;
         AirportService service = ServiceFactory<AirportService>.Instance;
         public FrmEditAirport()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
         public FrmEditAirport(AirportDto airportInfo)
         {

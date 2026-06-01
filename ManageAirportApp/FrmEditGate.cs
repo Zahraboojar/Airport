@@ -23,6 +23,7 @@ namespace ManageAirportApp
         public FrmEditGate()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
         public FrmEditGate(int terminalId)
         {
@@ -71,6 +72,7 @@ namespace ManageAirportApp
             if (terminalResult.IsSuccess)
             {
                 gate.TerminalId = terminalResult.Data.Id;
+                gate.Terminal = terminalResult.Data;
             }
             else
             {

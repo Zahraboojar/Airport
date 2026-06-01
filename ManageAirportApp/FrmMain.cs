@@ -25,6 +25,7 @@ namespace ManageAirportApp
         public FrmMain()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
             _sp = new SelectProperties();
             menuControl.ReloadFormRequested += () =>
             {

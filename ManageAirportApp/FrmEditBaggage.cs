@@ -21,6 +21,7 @@ namespace ManageAirportApp
         public FrmEditBaggage()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
         public FrmEditBaggage(BaggageDto baggageInfo)
         {

@@ -22,6 +22,7 @@ namespace ManageAirportApp
         public FrmEditEmployee()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
         public FrmEditEmployee(EmployeeDto employeeInfo)
         {

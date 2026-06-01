@@ -21,6 +21,7 @@ namespace ManageAirportApp
         public FrmEditTerminal()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
         public FrmEditTerminal(TerminalDto terminal)
         {

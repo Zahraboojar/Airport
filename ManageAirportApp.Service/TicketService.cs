@@ -39,7 +39,12 @@ namespace ManageAirportApp.Service
                     BookingDate = DateTime.Now
                 };
 
-                return await _repo.AddAsync(ticket);
+                var result = await _repo.AddAsync(ticket);
+                if (result.IsSuccess)
+                {
+                    await SetLogs.SetTicket(Actions.Add, "یک بلیط اضافه شد");
+                }
+                return result;
             }
             return validateResult;
         }
@@ -55,7 +60,6 @@ namespace ManageAirportApp.Service
                     var existingTicket = ticketResult.Data;
 
                     existingTicket.SeatNumber = entity.SeatNumber;
-                    existingTicket.TicketNumber = entity.TicketNumber;
                     existingTicket.TicketType = EnumExtensions.GetTicketType(entity.TicketType);
                     existingTicket.PassengerId = entity.PassengerId;
                     existingTicket.FlightId = entity.FlightId;
@@ -65,7 +69,12 @@ namespace ManageAirportApp.Service
                     existingTicket.UpdatedById = LoginedUserService.EmployeeId;
                     existingTicket.UpdatedAt = DateTime.Now;
 
-                    return await _repo.UpdateAsync(existingTicket);
+                    var result = await _repo.UpdateAsync(existingTicket);
+                    if (result.IsSuccess)
+                    {
+                        await SetLogs.SetTicket(Actions.Update, $" بلیت {entity.TicketNumber} ویرایش شد");
+                    }
+                    return result;
                 }
                 return validateResult;
             }

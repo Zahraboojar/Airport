@@ -41,6 +41,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLogs = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tlpMenuItem.SuspendLayout();
@@ -55,8 +56,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.08933F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.06203F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.27792F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.87345F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.72457F));
             this.tableLayoutPanel1.Controls.Add(this.lblTime, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
@@ -96,27 +97,29 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(301, 59);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(361, 59);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // tlpMenuItem
             // 
             this.tlpMenuItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tlpMenuItem.ColumnCount = 4;
+            this.tlpMenuItem.ColumnCount = 5;
             this.tlpMenuItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tlpMenuItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tlpMenuItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tlpMenuItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tlpMenuItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMenuItem.Controls.Add(this.btnProfile, 3, 0);
             this.tlpMenuItem.Controls.Add(this.btnThem, 1, 0);
             this.tlpMenuItem.Controls.Add(this.btnBack, 0, 0);
             this.tlpMenuItem.Controls.Add(this.btnSetting, 2, 0);
+            this.tlpMenuItem.Controls.Add(this.btnLogs, 4, 0);
             this.tlpMenuItem.Location = new System.Drawing.Point(62, 3);
             this.tlpMenuItem.Name = "tlpMenuItem";
             this.tlpMenuItem.RowCount = 1;
             this.tlpMenuItem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMenuItem.Size = new System.Drawing.Size(236, 53);
+            this.tlpMenuItem.Size = new System.Drawing.Size(296, 53);
             this.tlpMenuItem.TabIndex = 3;
             this.tlpMenuItem.Visible = false;
             // 
@@ -220,6 +223,18 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // btnLogs
+            // 
+            this.btnLogs.BackgroundImage = global::ManageAirportApp.Properties.Resources.log;
+            this.btnLogs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLogs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogs.Location = new System.Drawing.Point(239, 3);
+            this.btnLogs.Name = "btnLogs";
+            this.btnLogs.Size = new System.Drawing.Size(54, 47);
+            this.btnLogs.TabIndex = 1;
+            this.btnLogs.UseVisualStyleBackColor = true;
+            this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
+            // 
             // MenuControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,5 +269,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnLogs;
     }
 }

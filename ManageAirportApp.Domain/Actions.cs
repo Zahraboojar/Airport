@@ -12,7 +12,8 @@ namespace ManageAirportApp.Domain
         Update,
         Delete,
         Restore,
+        Login,
         AddEmployee,
-        Profile
+        Profile,
     }
 }

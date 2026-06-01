@@ -20,6 +20,7 @@ namespace ManageAirportApp
         public FrmEditAircraft()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
         public FrmEditAircraft(AircraftDto aircraftInfo)
         {

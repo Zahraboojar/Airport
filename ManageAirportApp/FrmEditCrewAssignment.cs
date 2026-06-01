@@ -21,8 +21,10 @@ namespace ManageAirportApp
         CrewAssignmentService service = ServiceFactory<CrewAssignmentService>.Instance;
         public FrmEditCrewAssignment(FlightDto flight)
         {
+           
             _flight = flight;
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
 
         public FrmEditCrewAssignment(FlightDto flight, CrewAssignmentDto crewAsigmentInfo)

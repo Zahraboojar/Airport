@@ -17,6 +17,7 @@ namespace ManageAirportApp
         public FrmSelectAirport()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
         private async void FrmSelectAirport_Load(object sender, EventArgs e)
         {

@@ -19,6 +19,7 @@ namespace ManageAirportApp
         public FrmLogin()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
@@ -48,45 +49,103 @@ namespace ManageAirportApp
                 return;
             }
             lblTitle.Text = "تنظیم نشده";
-            //var employeeService = ServiceFactory<EmployeeService>.Instance;
-            //var employeeResult = await employeeService.GetByIdAsync();
-            //var airportService = ServiceFactory<AirportService>.Instance;
-            //var airporteResult = await airportService.GetByIdAsync(1);
-            //if (!employeeResult.IsSuccess)
-            //{
-            //    var airportDto = new AirportDto
-            //    {
-            //        City = "Tehran",
-            //        Region = "Iran",
-            //        CreationBy = null,
-            //        IATA_Code = "IRN",
-            //        ICAO_Code = "GYDR",
-            //        Name = "فرودگاه مهرآباد",
-            //    };
-            //    var employeeDto = new EmployeeDto
-            //    {
-            //        Address = "",
-            //        AirportId = 1,
-            //        Email = "ali@gmail.com",
-            //        LastName = "alavi",
-            //        FirstName = "ali",
-            //        UserName = "ali",
-            //        PassportNumber = "A12345678",
-            //        NationalCode = "1250902452",
-            //        Password = "123",
-            //        PhoneNumber = "09135467689",
-            //        DateOfBirth = DateTime.Now,
-            //        CreationBy = null,
-            //        EmployeeType = EnumExtensions.GetEmployeeType(EmployeeType.Management),
-            //    };
-            //    await airportService.AddAsync(airportDto);
-            //    await employeeService.AddAsync(employeeDto);
-            //}
+            
         }
 
         private void btnFIDS_Click(object sender, EventArgs e)
         {
             new FrmSelectAirport().ShowDialog();
+        }
+
+        private void chbShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbShowPass.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+            }
+        }
+
+        private async void btn_Click(object sender, EventArgs e)
+        {
+            var employeeService = ServiceFactory<EmployeeService>.Instance;
+            var employeeResult = await employeeService.GetByUsernameAsync("ali");
+            var airportService = ServiceFactory<AirportService>.Instance;
+            var airportResult = await airportService.GetAllEntityAsync(new SelectProperties());
+            if (!employeeResult.IsSuccess)
+            {
+                int airportId = 0;
+                if (!airportResult.IsSuccess)
+                {
+                    var airportDto = new AirportDto
+                    {
+                        City = "Tehran",
+                        Region = "Iran",
+                        CreationBy = null,
+                        IATA_Code = "IRN",
+                        ICAO_Code = "GYDR",
+                        Name = "فرودگاه مهرآباد",
+                    };
+                    var airresult = await airportService.AddAsync(airportDto);
+                    if (airresult.IsSuccess)
+                    {
+                        var data = await airportService.GetByNameAsync(airportDto.Name);
+                        if (data.IsSuccess)
+                        {
+                            airportId = data.Data.Id;
+                        }
+                    }
+                    
+                } else
+                {
+                    airportId = airportResult.Data[0].Id;
+                }
+                var employeeDto = new EmployeeDto
+                {
+                    Address = "",
+                    AirportId = airportId,
+                    Email = "ali@gmail.com",
+                    LastName = "alavi",
+                    FirstName = "ali",
+                    UserName = "ali",
+                    PassportNumber = "A12345678",
+                    NationalCode = "1250902452",
+                    Password = "123",
+                    PhoneNumber = "09135467689",
+                    DateOfBirth = DateTime.Now,
+                    CreationBy = null,
+                    EmployeeType = EnumExtensions.GetEmployeeType(EmployeeType.Management),
+                };
+                
+                var result = await employeeService.AddAsync(employeeDto);
+                if (result.IsSuccess)
+                {
+                    var loginService = new LoginedUserService();
+                    var loginResult = await loginService.Login("ali", "123");
+                    if (loginResult.IsSuccess)
+                    {
+
+                        CustomMessageBox.Success(Messages.Welcome +
+                            Environment.NewLine + "username = ali , password = 123");
+                        this.Hide();
+                        new FrmMain().ShowDialog();
+
+                        Close();
+                    }
+                }
+            } else
+            {
+                CustomMessageBox.Error("کاربر مهمان قبلا ایجاد شده " + Environment.NewLine + "username = ali , password = 123");
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            ThemeManager.ReverseTheme(this.FindForm());
+            btnThem.BackgroundImage = ThemeManager.ThemeIcon;
         }
     }
 }

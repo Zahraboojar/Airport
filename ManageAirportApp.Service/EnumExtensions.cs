@@ -371,6 +371,8 @@ namespace ManageAirportApp.Service
             {
                 case PersionDictionary.Add:
                     return Actions.Add;
+                case PersionDictionary.Login:
+                    return Actions.Login;
                 case PersionDictionary.Profile:
                     return Actions.Profile;
                 case PersionDictionary.Update:
@@ -398,6 +400,8 @@ namespace ManageAirportApp.Service
                     return PersionDictionary.Update;
                 case Actions.Restore:
                     return PersionDictionary.Restore;
+                case Actions.Login:
+                    return PersionDictionary.Login;
                 case Actions.Delete:
                     return PersionDictionary.Delete;
                 case Actions.AddEmployee:

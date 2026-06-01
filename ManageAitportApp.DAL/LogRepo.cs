@@ -33,9 +33,7 @@ namespace ManageAitportApp.DAL
             {
                 List<Log> all = await set
                     .Where(x => x.IsDeleted == selectProperties.IsDeleted && x.AirportId == id)
-                    .OrderBy(x => x.Id)
-                    .Skip(selectProperties.Offset)
-                    .Take(selectProperties.Limit)
+                    .OrderByDescending(x => x.Id)
                     .ToListAsync();
                 return OperationResult<List<Log>>.Success(all);
             }

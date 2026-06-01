@@ -127,7 +127,6 @@
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="FlightValidation.cs" />
     <Compile Include="GenerateUniqueItem.cs" />
-    <Compile Include="kavenegarService.cs" />
     <Compile Include="PersionDictionary.cs" />
     <Compile Include="IDeleteAndRestoreService.cs" />
     <Compile Include="ServiceFactory.cs" />
@@ -156,6 +155,7 @@
     <Compile Include="PassengerDto.cs" />
     <Compile Include="PassengerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetLogs.cs" />
     <Compile Include="StimulsoftService.cs" />
     <Compile Include="StringHelper.cs" />
     <Compile Include="TerminalDto.cs" />

@@ -135,5 +135,7 @@ namespace ManageAirportApp.Service
         public const string RoundTrip = "دو طرفه";
 
         public const string Profile = "پروفایل";
+        public const string Login = "وارد شدن";
+        public const string CrewAssignment = "اختصاص کارمندان";
     }
 }

@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace ManageAirportApp
 {
-    public partial class FrmFids : Form
+    public partial class FrmFids : BaseFrm
     {
         TerminalService terminalService = ServiceFactory<TerminalService>.Instance;
         GateService gateService = ServiceFactory<GateService>.Instance;
@@ -23,6 +23,7 @@ namespace ManageAirportApp
         public FrmFids(Airport airport)
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
             _airport = airport;
             sP = new SelectProperties();
             sP.AirportId = _airport.Id;

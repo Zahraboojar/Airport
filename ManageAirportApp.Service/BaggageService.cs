@@ -36,7 +36,12 @@ namespace ManageAirportApp.Service
                     Status = EnumExtensions.GetBaggageStatus(entity.Status),
                     CreatedById = LoginedUserService.EmployeeId
                 };
-                return await _repo.AddAsync(baggage);
+                var result = await _repo.AddAsync(baggage);
+                if (result.IsSuccess)
+                {
+                    await SetLogs.SetBaggage(Actions.Add, $"یک چمدان به بلیط {entity.TicketNumber} اضافه شد");
+                }
+                return result;
             }
             return validateResult;
         }
@@ -66,7 +71,12 @@ namespace ManageAirportApp.Service
                     existingBaggage.UpdatedById = LoginedUserService.EmployeeId;
                     existingBaggage.UpdatedAt = DateTime.Now;
 
-                    return await _repo.UpdateAsync(existingBaggage);
+                    var result = await _repo.UpdateAsync(existingBaggage);
+                    if (result.IsSuccess)
+                    {
+                        await SetLogs.SetBaggage(Actions.Update, $" چمدان {entity.TagNumber} به بلیط {entity.TicketNumber} اضافه شد");
+                    }
+                    return result;
                 }
                 return validateResult;
             }
