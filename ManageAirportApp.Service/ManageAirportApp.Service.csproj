@@ -123,6 +123,7 @@
     <Compile Include="BaseTimeDto.cs" />
     <Compile Include="BaseUserValidation.cs" />
     <Compile Include="BaseValidation.cs" />
+    <Compile Include="DatabaseService.cs" />
     <Compile Include="DvgDisplayNameAttribute.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="FlightValidation.cs" />

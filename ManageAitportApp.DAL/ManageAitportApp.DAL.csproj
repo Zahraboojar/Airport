@@ -88,6 +88,7 @@
     <Compile Include="BaggageRepo.cs" />
     <Compile Include="BaseRepo.cs" />
     <Compile Include="CrewAssignmentRepo.cs" />
+    <Compile Include="DatabaseHelper.cs" />
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="EmployeeRepo.cs" />
     <Compile Include="FlightRepo.cs" />

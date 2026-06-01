@@ -19,7 +19,21 @@ namespace ManageAirportApp
         public FrmLogin()
         {
             InitializeComponent();
+            ShowLoading(true);
             ThemeManager.ApplyTheme(this);
+        }
+
+        private void ShowLoading(bool show)
+        {
+            if (show)
+            {
+                lblLoading.Visible = true;
+                lblLoading.BringToFront();
+            }
+            else
+            {
+                lblLoading.Visible = false;
+            }
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
@@ -27,7 +41,7 @@ namespace ManageAirportApp
             FrmMain mainForm = new FrmMain();
             ThemeManager.ApplyTheme(mainForm);
             var loginService = new LoginedUserService();
-            var result = await loginService.Login(txtUserName.Text,txtPassword.Text);
+            var result = await loginService.Login(txtUserName.Text, txtPassword.Text);
             if (result.IsSuccess)
             {
                 CustomMessageBox.Success(Messages.Welcome);
@@ -35,7 +49,8 @@ namespace ManageAirportApp
                 mainForm.ShowDialog();
 
                 Close();
-            } else
+            }
+            else
             {
                 CustomMessageBox.Error(Messages.InCorrectUserNameOrPassWord);
             }
@@ -43,13 +58,21 @@ namespace ManageAirportApp
 
         private async void FrmLogin_Load(object sender, EventArgs e)
         {
+            var dbCreated = await DatabaseService.EnsureDatabaseCreatedAsync();
+            if (!dbCreated)
+            {
+                MessageBox.Show("error in create db");
+                Application.Exit();
+                return;
+            }
+            ShowLoading(false);
             if (LoginedUserService.Employee != null)
             {
                 lblTitle.Text = LoginedUserService.Employee.Airport.Name;
                 return;
             }
             lblTitle.Text = "تنظیم نشده";
-            
+
         }
 
         private void btnFIDS_Click(object sender, EventArgs e)
@@ -98,8 +121,9 @@ namespace ManageAirportApp
                             airportId = data.Data.Id;
                         }
                     }
-                    
-                } else
+
+                }
+                else
                 {
                     airportId = airportResult.Data[0].Id;
                 }
@@ -119,7 +143,7 @@ namespace ManageAirportApp
                     CreationBy = null,
                     EmployeeType = EnumExtensions.GetEmployeeType(EmployeeType.Management),
                 };
-                
+
                 var result = await employeeService.AddAsync(employeeDto);
                 if (result.IsSuccess)
                 {
@@ -136,7 +160,8 @@ namespace ManageAirportApp
                         Close();
                     }
                 }
-            } else
+            }
+            else
             {
                 CustomMessageBox.Error("کاربر مهمان قبلا ایجاد شده " + Environment.NewLine + "username = ali , password = 123");
             }
