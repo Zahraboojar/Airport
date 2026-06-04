@@ -194,7 +194,7 @@
             this.btnRefresh.Location = new System.Drawing.Point(83, 3);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(34, 31);
-            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.TabIndex = 4;
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -223,7 +223,7 @@
             this.btnAdd.Location = new System.Drawing.Point(43, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(34, 31);
-            this.btnAdd.TabIndex = 2;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_ClickAsync);
@@ -249,7 +249,7 @@
             this.txtSearch.Location = new System.Drawing.Point(264, 3);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(156, 27);
-            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TabIndex = 0;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
@@ -260,7 +260,7 @@
             this.button1.Location = new System.Drawing.Point(198, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(60, 31);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 1;
             this.button1.Text = "جستجو";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -293,7 +293,7 @@
             this.btnRight.Location = new System.Drawing.Point(313, 3);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(46, 51);
-            this.btnRight.TabIndex = 0;
+            this.btnRight.TabIndex = 5;
             this.btnRight.UseVisualStyleBackColor = true;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
@@ -305,7 +305,7 @@
             this.btnLeft.Location = new System.Drawing.Point(132, 3);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(46, 51);
-            this.btnLeft.TabIndex = 1;
+            this.btnLeft.TabIndex = 6;
             this.btnLeft.UseVisualStyleBackColor = true;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
@@ -364,7 +364,7 @@
             this.dBtnFlights.Location = new System.Drawing.Point(3, 3);
             this.dBtnFlights.Name = "dBtnFlights";
             this.dBtnFlights.Size = new System.Drawing.Size(302, 47);
-            this.dBtnFlights.TabIndex = 0;
+            this.dBtnFlights.TabIndex = 7;
             this.dBtnFlights.Text = "پرواز ها";
             this.dBtnFlights.UseVisualStyleBackColor = true;
             this.dBtnFlights.Click += new System.EventHandler(this.DashBoardBtn_ClickAsync);
@@ -379,7 +379,7 @@
             this.dBtnTickets.Location = new System.Drawing.Point(3, 56);
             this.dBtnTickets.Name = "dBtnTickets";
             this.dBtnTickets.Size = new System.Drawing.Size(302, 47);
-            this.dBtnTickets.TabIndex = 1;
+            this.dBtnTickets.TabIndex = 8;
             this.dBtnTickets.Text = "بلیط ها";
             this.dBtnTickets.UseVisualStyleBackColor = true;
             this.dBtnTickets.Click += new System.EventHandler(this.DashBoardBtn_ClickAsync);
@@ -394,7 +394,7 @@
             this.dBtnPassengers.Location = new System.Drawing.Point(3, 109);
             this.dBtnPassengers.Name = "dBtnPassengers";
             this.dBtnPassengers.Size = new System.Drawing.Size(302, 47);
-            this.dBtnPassengers.TabIndex = 2;
+            this.dBtnPassengers.TabIndex = 9;
             this.dBtnPassengers.Text = "مسافران";
             this.dBtnPassengers.UseVisualStyleBackColor = true;
             this.dBtnPassengers.Click += new System.EventHandler(this.DashBoardBtn_ClickAsync);
@@ -409,7 +409,7 @@
             this.dBtnEmployees.Location = new System.Drawing.Point(3, 162);
             this.dBtnEmployees.Name = "dBtnEmployees";
             this.dBtnEmployees.Size = new System.Drawing.Size(302, 47);
-            this.dBtnEmployees.TabIndex = 3;
+            this.dBtnEmployees.TabIndex = 10;
             this.dBtnEmployees.Text = "کارکنان";
             this.dBtnEmployees.UseVisualStyleBackColor = true;
             this.dBtnEmployees.Click += new System.EventHandler(this.DashBoardBtn_ClickAsync);
@@ -424,7 +424,7 @@
             this.dBtnAirports.Location = new System.Drawing.Point(3, 215);
             this.dBtnAirports.Name = "dBtnAirports";
             this.dBtnAirports.Size = new System.Drawing.Size(302, 47);
-            this.dBtnAirports.TabIndex = 4;
+            this.dBtnAirports.TabIndex = 11;
             this.dBtnAirports.Text = "فرودگاه ها";
             this.dBtnAirports.UseVisualStyleBackColor = true;
             this.dBtnAirports.Click += new System.EventHandler(this.DashBoardBtn_ClickAsync);
@@ -439,7 +439,7 @@
             this.dBtnAircrafts.Location = new System.Drawing.Point(3, 268);
             this.dBtnAircrafts.Name = "dBtnAircrafts";
             this.dBtnAircrafts.Size = new System.Drawing.Size(302, 47);
-            this.dBtnAircrafts.TabIndex = 5;
+            this.dBtnAircrafts.TabIndex = 12;
             this.dBtnAircrafts.Text = "هواپیما ها";
             this.dBtnAircrafts.UseVisualStyleBackColor = true;
             this.dBtnAircrafts.Click += new System.EventHandler(this.DashBoardBtn_ClickAsync);
@@ -454,7 +454,7 @@
             this.dBtnBaggages.Location = new System.Drawing.Point(3, 321);
             this.dBtnBaggages.Name = "dBtnBaggages";
             this.dBtnBaggages.Size = new System.Drawing.Size(302, 47);
-            this.dBtnBaggages.TabIndex = 6;
+            this.dBtnBaggages.TabIndex = 13;
             this.dBtnBaggages.Text = "چمدان ها (بار)";
             this.dBtnBaggages.UseVisualStyleBackColor = true;
             this.dBtnBaggages.Click += new System.EventHandler(this.DashBoardBtn_ClickAsync);
@@ -469,7 +469,7 @@
             this.dBtnTerminals.Location = new System.Drawing.Point(3, 374);
             this.dBtnTerminals.Name = "dBtnTerminals";
             this.dBtnTerminals.Size = new System.Drawing.Size(302, 47);
-            this.dBtnTerminals.TabIndex = 7;
+            this.dBtnTerminals.TabIndex = 14;
             this.dBtnTerminals.Text = "ترمینال ها";
             this.dBtnTerminals.UseVisualStyleBackColor = true;
             this.dBtnTerminals.Click += new System.EventHandler(this.DashBoardBtn_ClickAsync);
@@ -484,7 +484,7 @@
             this.dBtnAirTraffic.Location = new System.Drawing.Point(3, 427);
             this.dBtnAirTraffic.Name = "dBtnAirTraffic";
             this.dBtnAirTraffic.Size = new System.Drawing.Size(302, 53);
-            this.dBtnAirTraffic.TabIndex = 8;
+            this.dBtnAirTraffic.TabIndex = 15;
             this.dBtnAirTraffic.Text = "کنترل ترافیک هوایی";
             this.dBtnAirTraffic.UseVisualStyleBackColor = true;
             this.dBtnAirTraffic.Click += new System.EventHandler(this.DashBoardBtn_ClickAsync);

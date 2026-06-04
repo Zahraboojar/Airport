@@ -49,6 +49,7 @@ namespace ManageAirportApp
                 NationalCode = txtNationalCode.Text,
                 PassportNumber = txtPassportNum.Text,
                 PhoneNumber = txtMobile.Text,
+                EmployeeType = EnumExtensions.GetEmployeeType(LoginedUserService.Employee.EmployeeType),
             };
             var passResult = StringHelper.IsEqualPassword(txtPassword.Text, txtRepassword.Text);
             if (passResult.IsSuccess)

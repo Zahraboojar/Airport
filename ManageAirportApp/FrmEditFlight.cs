@@ -105,7 +105,8 @@ namespace ManageAirportApp
 
                 //gate
                 var gateService = ServiceFactory<GateService>.Instance;
-                var gateResult = await gateService.GetByGateNumberAsync(combGate.SelectedItem.ToString());
+
+                var gateResult = await gateService.GetByGateNumberAsync(SeperateGateNumber(combGate.SelectedItem.ToString()));
                 if (gateResult.IsSuccess)
                 {
                     flight.GateId = gateResult.Data.Id;
@@ -155,6 +156,17 @@ namespace ManageAirportApp
                 
             }
 
+        }
+        private string SeperateGateNumber(string input)
+        {
+            string[] parts = input.Split('-');
+
+            if (parts.Length > 1)
+            {
+                string result = parts[1].Trim();
+                return result;
+            }
+            return "";
         }
         
     }

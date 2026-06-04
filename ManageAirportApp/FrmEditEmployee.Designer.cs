@@ -30,6 +30,7 @@
         {
             this.menuControl1 = new ManageAirportApp.MenuControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.combAirport = new System.Windows.Forms.ComboBox();
             this.combType = new System.Windows.Forms.ComboBox();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.rTxtAddress = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,8 +58,6 @@
             this.txtNationalCode = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,6 +107,21 @@
             this.panel1.Size = new System.Drawing.Size(806, 483);
             this.panel1.TabIndex = 2;
             // 
+            // datePicker
+            // 
+            this.datePicker.CalendarForeColor = System.Drawing.Color.Black;
+            this.datePicker.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
+            this.datePicker.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
+            this.datePicker.CalendarTitleForeColor = System.Drawing.Color.Black;
+            this.datePicker.CalendarTrailingForeColor = System.Drawing.Color.Black;
+            this.datePicker.Font = new System.Drawing.Font("B Nazanin", 12F);
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePicker.Location = new System.Drawing.Point(392, 320);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(206, 31);
+            this.datePicker.TabIndex = 7;
+            this.datePicker.Value = new System.DateTime(2026, 5, 11, 12, 0, 0, 0);
+            // 
             // combAirport
             // 
             this.combAirport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
@@ -115,7 +130,7 @@
             this.combAirport.Location = new System.Drawing.Point(12, 55);
             this.combAirport.Name = "combAirport";
             this.combAirport.Size = new System.Drawing.Size(206, 32);
-            this.combAirport.TabIndex = 21;
+            this.combAirport.TabIndex = 9;
             // 
             // combType
             // 
@@ -125,7 +140,7 @@
             this.combType.Location = new System.Drawing.Point(12, 9);
             this.combType.Name = "combType";
             this.combType.Size = new System.Drawing.Size(206, 32);
-            this.combType.TabIndex = 21;
+            this.combType.TabIndex = 8;
             // 
             // btnSubmit
             // 
@@ -134,7 +149,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(218, 384);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(126, 49);
-            this.btnSubmit.TabIndex = 20;
+            this.btnSubmit.TabIndex = 14;
             this.btnSubmit.Text = "تایید";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -146,7 +161,7 @@
             this.button1.Location = new System.Drawing.Point(472, 384);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 49);
-            this.button1.TabIndex = 20;
+            this.button1.TabIndex = 15;
             this.button1.Tag = "close";
             this.button1.Text = "لغو";
             this.button1.UseVisualStyleBackColor = false;
@@ -157,7 +172,7 @@
             this.rTxtAddress.Location = new System.Drawing.Point(10, 278);
             this.rTxtAddress.Name = "rTxtAddress";
             this.rTxtAddress.Size = new System.Drawing.Size(206, 70);
-            this.rTxtAddress.TabIndex = 19;
+            this.rTxtAddress.TabIndex = 13;
             this.rTxtAddress.Text = "";
             // 
             // label12
@@ -181,6 +196,17 @@
             this.label7.Size = new System.Drawing.Size(96, 28);
             this.label7.TabIndex = 11;
             this.label7.Text = "تکرار گذرواژه :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label13.Location = new System.Drawing.Point(670, 323);
+            this.label13.Name = "label13";
+            this.label13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label13.Size = new System.Drawing.Size(77, 28);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "تاریخ تولد :";
             // 
             // label6
             // 
@@ -299,7 +325,7 @@
             this.txtPassportNum.Location = new System.Drawing.Point(392, 273);
             this.txtPassportNum.Name = "txtPassportNum";
             this.txtPassportNum.Size = new System.Drawing.Size(206, 31);
-            this.txtPassportNum.TabIndex = 5;
+            this.txtPassportNum.TabIndex = 6;
             // 
             // txtRepassword
             // 
@@ -309,7 +335,7 @@
             this.txtRepassword.Location = new System.Drawing.Point(10, 222);
             this.txtRepassword.Name = "txtRepassword";
             this.txtRepassword.Size = new System.Drawing.Size(206, 31);
-            this.txtRepassword.TabIndex = 7;
+            this.txtRepassword.TabIndex = 12;
             // 
             // txtPassword
             // 
@@ -319,7 +345,7 @@
             this.txtPassword.Location = new System.Drawing.Point(10, 170);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(206, 31);
-            this.txtPassword.TabIndex = 7;
+            this.txtPassword.TabIndex = 11;
             // 
             // txtMobile
             // 
@@ -328,7 +354,7 @@
             this.txtMobile.Location = new System.Drawing.Point(392, 220);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(206, 31);
-            this.txtMobile.TabIndex = 6;
+            this.txtMobile.TabIndex = 5;
             // 
             // txtUserName
             // 
@@ -338,7 +364,7 @@
             this.txtUserName.Location = new System.Drawing.Point(10, 117);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(206, 31);
-            this.txtUserName.TabIndex = 8;
+            this.txtUserName.TabIndex = 10;
             // 
             // txtEmail
             // 
@@ -347,7 +373,7 @@
             this.txtEmail.Location = new System.Drawing.Point(392, 167);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(206, 31);
-            this.txtEmail.TabIndex = 7;
+            this.txtEmail.TabIndex = 4;
             // 
             // txtNationalCode
             // 
@@ -356,7 +382,7 @@
             this.txtNationalCode.Location = new System.Drawing.Point(392, 114);
             this.txtNationalCode.Name = "txtNationalCode";
             this.txtNationalCode.Size = new System.Drawing.Size(206, 31);
-            this.txtNationalCode.TabIndex = 8;
+            this.txtNationalCode.TabIndex = 3;
             // 
             // txtLastName
             // 
@@ -365,7 +391,7 @@
             this.txtLastName.Location = new System.Drawing.Point(392, 59);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(206, 31);
-            this.txtLastName.TabIndex = 9;
+            this.txtLastName.TabIndex = 2;
             // 
             // txtFirstName
             // 
@@ -374,33 +400,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(392, 9);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(206, 31);
-            this.txtFirstName.TabIndex = 10;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label13.Location = new System.Drawing.Point(670, 323);
-            this.label13.Name = "label13";
-            this.label13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label13.Size = new System.Drawing.Size(77, 28);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "تاریخ تولد :";
-            // 
-            // datePicker
-            // 
-            this.datePicker.CalendarForeColor = System.Drawing.Color.Black;
-            this.datePicker.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
-            this.datePicker.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
-            this.datePicker.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.datePicker.CalendarTrailingForeColor = System.Drawing.Color.Black;
-            this.datePicker.Font = new System.Drawing.Font("B Nazanin", 12F);
-            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePicker.Location = new System.Drawing.Point(392, 320);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(206, 31);
-            this.datePicker.TabIndex = 26;
-            this.datePicker.Value = new System.DateTime(2026, 5, 11, 12, 0, 0, 0);
+            this.txtFirstName.TabIndex = 1;
             // 
             // FrmEditEmployee
             // 

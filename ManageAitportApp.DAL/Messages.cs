@@ -62,7 +62,7 @@ namespace ManageAirportApp.DAL
         public static string IsSetSeatNumber = "این شماره صندلی از قبل رزرو شده است";
         public static string InCurrectCapacity = "ظرفیت باید در محدوده 1 تا 1000 باشد";
         public static string InCurrectManufacturerName = "فیلد سازنده هواپیما را درست وارد کنید";
-        public static string InCurrectModel = "فیلد سازنده هواپیما را درست وارد کنید";
+        public static string InCurrectModel = "فیلد مدل هواپیما را درست وارد کنید";
         public static string InCurrectRegistrationNumber = "فیلد شماره ثبت هواپیما را درست وارد کنید";
         public static string InCurrectPhoneNumber = "شماره موبایل درست  نیست";
         public static string InCurrectLastName = "نام خانوادگی را درست وارد کنید";

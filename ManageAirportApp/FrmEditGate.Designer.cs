@@ -35,8 +35,8 @@
             this.bynSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblGateNumber = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericCapacity)).BeginInit();
             this.SuspendLayout();
@@ -102,7 +102,7 @@
             this.combTerminal.Location = new System.Drawing.Point(143, 192);
             this.combTerminal.Name = "combTerminal";
             this.combTerminal.Size = new System.Drawing.Size(206, 32);
-            this.combTerminal.TabIndex = 23;
+            this.combTerminal.TabIndex = 1;
             // 
             // numericCapacity
             // 
@@ -121,7 +121,7 @@
             0});
             this.numericCapacity.Name = "numericCapacity";
             this.numericCapacity.Size = new System.Drawing.Size(206, 31);
-            this.numericCapacity.TabIndex = 22;
+            this.numericCapacity.TabIndex = 2;
             this.numericCapacity.Value = new decimal(new int[] {
             1,
             0,
@@ -135,7 +135,7 @@
             this.bynSubmit.Location = new System.Drawing.Point(218, 384);
             this.bynSubmit.Name = "bynSubmit";
             this.bynSubmit.Size = new System.Drawing.Size(126, 49);
-            this.bynSubmit.TabIndex = 20;
+            this.bynSubmit.TabIndex = 3;
             this.bynSubmit.Text = "تایید";
             this.bynSubmit.UseVisualStyleBackColor = false;
             this.bynSubmit.Click += new System.EventHandler(this.button2_Click);
@@ -147,7 +147,7 @@
             this.btnCancel.Location = new System.Drawing.Point(472, 384);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(126, 49);
-            this.btnCancel.TabIndex = 20;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Tag = "close";
             this.btnCancel.Text = "لغو";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -163,6 +163,16 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "ظرفیت :";
             // 
+            // lblGateNumber
+            // 
+            this.lblGateNumber.AutoSize = true;
+            this.lblGateNumber.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblGateNumber.Location = new System.Drawing.Point(379, 106);
+            this.lblGateNumber.Name = "lblGateNumber";
+            this.lblGateNumber.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblGateNumber.Size = new System.Drawing.Size(0, 28);
+            this.lblGateNumber.TabIndex = 17;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -173,17 +183,6 @@
             this.label2.Size = new System.Drawing.Size(151, 28);
             this.label2.TabIndex = 17;
             this.label2.Text = "ترمینال مربوط به گیت :";
-            // 
-            // lblGateNumber
-            // 
-            this.lblGateNumber.AutoSize = true;
-            this.lblGateNumber.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblGateNumber.Location = new System.Drawing.Point(379, 106);
-            this.lblGateNumber.Name = "lblGateNumber";
-            this.lblGateNumber.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblGateNumber.Size = new System.Drawing.Size(44, 28);
-            this.lblGateNumber.TabIndex = 17;
-            this.lblGateNumber.Text = "گیت ";
             // 
             // FrmEditGate
             // 

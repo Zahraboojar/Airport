@@ -2,6 +2,7 @@
 using ManageAirportApp.Domain;
 using ManageAirportApp.Service;
 using ManageAirportApp.Share;
+using ManageSchoolApp.Service;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -125,7 +126,10 @@ namespace ManageAirportApp
 
         public static async Task LoadGateToComboBox(ComboBox cmb, int id = 0, int terminalId = 0)
         {
-            var sp = new SelectProperties();
+            var sp = new SelectProperties
+            {
+                AirportId = LoginedUserService.Employee?.AirportId ?? 0,
+            };
             var service = ServiceFactory<GateService>.Instance;
             var gateresult = await service.GetByIdAsync(id);
             sp.TerminalId = terminalId;
@@ -136,7 +140,7 @@ namespace ManageAirportApp
 
                 foreach (var gate in data.Data)
                 {
-                    cmb.Items.Add(gate.GateNumber);
+                    cmb.Items.Add($"{gate.Terminal.Name} - {gate.GateNumber}");
                     if (id == gate.Id)
                     {
                         cmb.SelectedItem = gate.GateNumber;

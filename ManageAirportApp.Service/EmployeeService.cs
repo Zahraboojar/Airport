@@ -38,6 +38,7 @@ namespace ManageAirportApp.Service
                     PhoneNumber = entity.PhoneNumber,
                     Address = entity.Address,
                     PassportNumber = entity.PassportNumber,
+                    Email = entity.Email,
                     CreatedById = (LoginedUserService.EmployeeId > 0) ? LoginedUserService.EmployeeId : (int?)null
                 };
                 var result = await _repo.AddAsync(employee);
@@ -70,9 +71,12 @@ namespace ManageAirportApp.Service
                         entity.AirportId;
                     existingEmployee.EmployeeType = EnumExtensions.GetEmployeeType(entity.EmployeeType);
                     existingEmployee.UserName = entity.UserName;
-                    if (existingEmployee.Password != "" || existingEmployee.Password != null)
+                    if (!(existingEmployee.Password == "" || existingEmployee.Password == null))
                     {
                         existingEmployee.Password = entity.Password;
+                    } else
+                    {
+                        existingEmployee.Password = employeeResult.Data.Password;
                     }
                     existingEmployee.FirstName = entity.FirstName;
                     existingEmployee.LastName = entity.LastName;
@@ -80,6 +84,7 @@ namespace ManageAirportApp.Service
                     existingEmployee.DateOfBirth = entity.DateOfBirth;
                     existingEmployee.PhoneNumber = entity.PhoneNumber;
                     existingEmployee.Address = entity.Address;
+                    existingEmployee.Email = entity.Email;
                     existingEmployee.PassportNumber = entity.PassportNumber;
                     existingEmployee.UpdatedById = LoginedUserService.EmployeeId;
                     existingEmployee.UpdatedAt = DateTime.Now;

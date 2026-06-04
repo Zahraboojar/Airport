@@ -62,6 +62,7 @@ namespace ManageAirportApp
 
             var result = await service.AddAsync(airtraffic);
             CustomMessageBox.Message(result.Message, result.IsSuccess);
+            if (result.IsSuccess) Close();
         }
     }
 }

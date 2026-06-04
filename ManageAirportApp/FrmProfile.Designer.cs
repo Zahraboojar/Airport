@@ -71,7 +71,7 @@
             this.datePicker.Location = new System.Drawing.Point(392, 395);
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(206, 31);
-            this.datePicker.TabIndex = 26;
+            this.datePicker.TabIndex = 6;
             this.datePicker.Value = new System.DateTime(2026, 5, 11, 12, 0, 0, 0);
             // 
             // btnSubmit
@@ -81,7 +81,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(218, 488);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(126, 49);
-            this.btnSubmit.TabIndex = 20;
+            this.btnSubmit.TabIndex = 12;
             this.btnSubmit.Text = "تایید";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -93,7 +93,7 @@
             this.button1.Location = new System.Drawing.Point(472, 488);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 49);
-            this.button1.TabIndex = 20;
+            this.button1.TabIndex = 13;
             this.button1.Tag = "close";
             this.button1.Text = "لغو";
             this.button1.UseVisualStyleBackColor = false;
@@ -104,7 +104,7 @@
             this.rTxtAddress.Location = new System.Drawing.Point(10, 382);
             this.rTxtAddress.Name = "rTxtAddress";
             this.rTxtAddress.Size = new System.Drawing.Size(206, 70);
-            this.rTxtAddress.TabIndex = 19;
+            this.rTxtAddress.TabIndex = 11;
             this.rTxtAddress.Text = "";
             // 
             // label13
@@ -200,7 +200,7 @@
             this.txtRepassword.Location = new System.Drawing.Point(3, 88);
             this.txtRepassword.Name = "txtRepassword";
             this.txtRepassword.Size = new System.Drawing.Size(206, 31);
-            this.txtRepassword.TabIndex = 7;
+            this.txtRepassword.TabIndex = 10;
             // 
             // txtPassword
             // 
@@ -209,7 +209,7 @@
             this.txtPassword.Location = new System.Drawing.Point(3, 36);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(206, 31);
-            this.txtPassword.TabIndex = 7;
+            this.txtPassword.TabIndex = 9;
             // 
             // txtMobile
             // 
@@ -218,7 +218,7 @@
             this.txtMobile.Location = new System.Drawing.Point(392, 284);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(206, 31);
-            this.txtMobile.TabIndex = 6;
+            this.txtMobile.TabIndex = 4;
             // 
             // txtUserName
             // 
@@ -245,7 +245,7 @@
             this.txtNationalCode.Location = new System.Drawing.Point(395, 222);
             this.txtNationalCode.Name = "txtNationalCode";
             this.txtNationalCode.Size = new System.Drawing.Size(206, 31);
-            this.txtNationalCode.TabIndex = 8;
+            this.txtNationalCode.TabIndex = 3;
             // 
             // txtLastName
             // 
@@ -254,7 +254,7 @@
             this.txtLastName.Location = new System.Drawing.Point(395, 169);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(206, 31);
-            this.txtLastName.TabIndex = 9;
+            this.txtLastName.TabIndex = 2;
             // 
             // txtFirstName
             // 
@@ -263,7 +263,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(395, 119);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(206, 31);
-            this.txtFirstName.TabIndex = 10;
+            this.txtFirstName.TabIndex = 1;
             // 
             // panel1
             // 

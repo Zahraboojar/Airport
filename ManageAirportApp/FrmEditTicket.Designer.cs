@@ -94,7 +94,7 @@
             0});
             this.numericPrice.Name = "numericPrice";
             this.numericPrice.Size = new System.Drawing.Size(206, 31);
-            this.numericPrice.TabIndex = 22;
+            this.numericPrice.TabIndex = 5;
             // 
             // combFlightClass
             // 
@@ -104,7 +104,7 @@
             this.combFlightClass.Location = new System.Drawing.Point(194, 184);
             this.combFlightClass.Name = "combFlightClass";
             this.combFlightClass.Size = new System.Drawing.Size(206, 32);
-            this.combFlightClass.TabIndex = 21;
+            this.combFlightClass.TabIndex = 4;
             // 
             // combSeatNum
             // 
@@ -114,7 +114,7 @@
             this.combSeatNum.Location = new System.Drawing.Point(194, 131);
             this.combSeatNum.Name = "combSeatNum";
             this.combSeatNum.Size = new System.Drawing.Size(206, 32);
-            this.combSeatNum.TabIndex = 21;
+            this.combSeatNum.TabIndex = 3;
             // 
             // comFlights
             // 
@@ -124,7 +124,7 @@
             this.comFlights.Location = new System.Drawing.Point(194, 80);
             this.comFlights.Name = "comFlights";
             this.comFlights.Size = new System.Drawing.Size(206, 32);
-            this.comFlights.TabIndex = 21;
+            this.comFlights.TabIndex = 2;
             this.comFlights.SelectedIndexChanged += new System.EventHandler(this.comFlights_SelectedIndexChanged);
             // 
             // combType
@@ -135,7 +135,7 @@
             this.combType.Location = new System.Drawing.Point(193, 295);
             this.combType.Name = "combType";
             this.combType.Size = new System.Drawing.Size(206, 32);
-            this.combType.TabIndex = 21;
+            this.combType.TabIndex = 6;
             // 
             // combPassengers
             // 
@@ -145,7 +145,7 @@
             this.combPassengers.Location = new System.Drawing.Point(194, 30);
             this.combPassengers.Name = "combPassengers";
             this.combPassengers.Size = new System.Drawing.Size(206, 32);
-            this.combPassengers.TabIndex = 21;
+            this.combPassengers.TabIndex = 1;
             // 
             // btnSubmit
             // 
@@ -154,7 +154,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(218, 384);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(126, 49);
-            this.btnSubmit.TabIndex = 20;
+            this.btnSubmit.TabIndex = 7;
             this.btnSubmit.Text = "تایید";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -166,7 +166,7 @@
             this.btnCancel.Location = new System.Drawing.Point(472, 384);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(126, 49);
-            this.btnCancel.TabIndex = 20;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Tag = "close";
             this.btnCancel.Text = "لغو";
             this.btnCancel.UseVisualStyleBackColor = false;

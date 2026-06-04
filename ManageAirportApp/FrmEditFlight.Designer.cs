@@ -111,7 +111,7 @@
             this.dpDTime.Location = new System.Drawing.Point(12, 328);
             this.dpDTime.Name = "dpDTime";
             this.dpDTime.Size = new System.Drawing.Size(206, 31);
-            this.dpDTime.TabIndex = 27;
+            this.dpDTime.TabIndex = 13;
             this.dpDTime.Value = new System.DateTime(2026, 5, 11, 12, 0, 0, 0);
             // 
             // dpDDate
@@ -126,7 +126,7 @@
             this.dpDDate.Location = new System.Drawing.Point(12, 291);
             this.dpDDate.Name = "dpDDate";
             this.dpDDate.Size = new System.Drawing.Size(206, 31);
-            this.dpDDate.TabIndex = 27;
+            this.dpDDate.TabIndex = 12;
             this.dpDDate.Value = new System.DateTime(2026, 5, 11, 12, 0, 0, 0);
             // 
             // dpATime
@@ -141,7 +141,7 @@
             this.dpATime.Location = new System.Drawing.Point(12, 220);
             this.dpATime.Name = "dpATime";
             this.dpATime.Size = new System.Drawing.Size(206, 31);
-            this.dpATime.TabIndex = 27;
+            this.dpATime.TabIndex = 11;
             this.dpATime.Value = new System.DateTime(2026, 5, 11, 12, 0, 0, 0);
             // 
             // dpADate
@@ -156,7 +156,7 @@
             this.dpADate.Location = new System.Drawing.Point(12, 183);
             this.dpADate.Name = "dpADate";
             this.dpADate.Size = new System.Drawing.Size(206, 31);
-            this.dpADate.TabIndex = 27;
+            this.dpADate.TabIndex = 10;
             this.dpADate.Value = new System.DateTime(2026, 5, 11, 12, 0, 0, 0);
             // 
             // dpSDTime
@@ -171,7 +171,7 @@
             this.dpSDTime.Location = new System.Drawing.Point(392, 328);
             this.dpSDTime.Name = "dpSDTime";
             this.dpSDTime.Size = new System.Drawing.Size(206, 31);
-            this.dpSDTime.TabIndex = 27;
+            this.dpSDTime.TabIndex = 6;
             this.dpSDTime.Value = new System.DateTime(2026, 5, 11, 12, 0, 0, 0);
             // 
             // dpSDDate
@@ -186,7 +186,7 @@
             this.dpSDDate.Location = new System.Drawing.Point(392, 291);
             this.dpSDDate.Name = "dpSDDate";
             this.dpSDDate.Size = new System.Drawing.Size(206, 31);
-            this.dpSDDate.TabIndex = 27;
+            this.dpSDDate.TabIndex = 5;
             this.dpSDDate.Value = new System.DateTime(2026, 5, 11, 12, 0, 0, 0);
             // 
             // dpSATime
@@ -201,7 +201,7 @@
             this.dpSATime.Location = new System.Drawing.Point(392, 220);
             this.dpSATime.Name = "dpSATime";
             this.dpSATime.Size = new System.Drawing.Size(206, 31);
-            this.dpSATime.TabIndex = 27;
+            this.dpSATime.TabIndex = 4;
             this.dpSATime.Value = new System.DateTime(2026, 5, 11, 12, 0, 0, 0);
             // 
             // dpSADate
@@ -216,7 +216,7 @@
             this.dpSADate.Location = new System.Drawing.Point(392, 183);
             this.dpSADate.Name = "dpSADate";
             this.dpSADate.Size = new System.Drawing.Size(206, 31);
-            this.dpSADate.TabIndex = 27;
+            this.dpSADate.TabIndex = 3;
             this.dpSADate.Value = new System.DateTime(2026, 5, 11, 12, 0, 0, 0);
             // 
             // combStatus
@@ -227,7 +227,7 @@
             this.combStatus.Location = new System.Drawing.Point(12, 68);
             this.combStatus.Name = "combStatus";
             this.combStatus.Size = new System.Drawing.Size(206, 32);
-            this.combStatus.TabIndex = 21;
+            this.combStatus.TabIndex = 8;
             // 
             // combGate
             // 
@@ -237,7 +237,7 @@
             this.combGate.Location = new System.Drawing.Point(12, 129);
             this.combGate.Name = "combGate";
             this.combGate.Size = new System.Drawing.Size(206, 32);
-            this.combGate.TabIndex = 21;
+            this.combGate.TabIndex = 9;
             // 
             // combDAirport
             // 
@@ -247,7 +247,7 @@
             this.combDAirport.Location = new System.Drawing.Point(392, 93);
             this.combDAirport.Name = "combDAirport";
             this.combDAirport.Size = new System.Drawing.Size(206, 32);
-            this.combDAirport.TabIndex = 21;
+            this.combDAirport.TabIndex = 2;
             // 
             // combAAirport
             // 
@@ -257,7 +257,7 @@
             this.combAAirport.Location = new System.Drawing.Point(392, 38);
             this.combAAirport.Name = "combAAirport";
             this.combAAirport.Size = new System.Drawing.Size(206, 32);
-            this.combAAirport.TabIndex = 21;
+            this.combAAirport.TabIndex = 1;
             // 
             // combAircraft
             // 
@@ -267,7 +267,7 @@
             this.combAircraft.Location = new System.Drawing.Point(12, 9);
             this.combAircraft.Name = "combAircraft";
             this.combAircraft.Size = new System.Drawing.Size(206, 32);
-            this.combAircraft.TabIndex = 21;
+            this.combAircraft.TabIndex = 7;
             // 
             // btnSubmit
             // 
@@ -276,7 +276,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(218, 384);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(126, 49);
-            this.btnSubmit.TabIndex = 20;
+            this.btnSubmit.TabIndex = 14;
             this.btnSubmit.Text = "تایید";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -288,7 +288,7 @@
             this.btnCancel.Location = new System.Drawing.Point(472, 384);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(126, 49);
-            this.btnCancel.TabIndex = 20;
+            this.btnCancel.TabIndex = 15;
             this.btnCancel.Tag = "close";
             this.btnCancel.Text = "لغو";
             this.btnCancel.UseVisualStyleBackColor = false;

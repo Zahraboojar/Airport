@@ -73,7 +73,7 @@
             this.btnCancel.Location = new System.Drawing.Point(479, 421);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(126, 49);
-            this.btnCancel.TabIndex = 22;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Tag = "close";
             this.btnCancel.Text = "لغو";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -86,7 +86,7 @@
             this.combRegion.Location = new System.Drawing.Point(161, 262);
             this.combRegion.Name = "combRegion";
             this.combRegion.Size = new System.Drawing.Size(206, 32);
-            this.combRegion.TabIndex = 21;
+            this.combRegion.TabIndex = 4;
             this.combRegion.SelectedIndexChanged += new System.EventHandler(this.combRegion_SelectedIndexChanged);
             // 
             // combCity
@@ -97,7 +97,7 @@
             this.combCity.Location = new System.Drawing.Point(161, 323);
             this.combCity.Name = "combCity";
             this.combCity.Size = new System.Drawing.Size(206, 32);
-            this.combCity.TabIndex = 21;
+            this.combCity.TabIndex = 5;
             // 
             // button2
             // 
@@ -106,7 +106,7 @@
             this.button2.Location = new System.Drawing.Point(220, 420);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 49);
-            this.button2.TabIndex = 20;
+            this.button2.TabIndex = 6;
             this.button2.Text = "تایید";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -173,7 +173,7 @@
             this.txtICAO_Code.Location = new System.Drawing.Point(161, 211);
             this.txtICAO_Code.Name = "txtICAO_Code";
             this.txtICAO_Code.Size = new System.Drawing.Size(206, 31);
-            this.txtICAO_Code.TabIndex = 8;
+            this.txtICAO_Code.TabIndex = 3;
             // 
             // txtIATA_Code
             // 
@@ -182,7 +182,7 @@
             this.txtIATA_Code.Location = new System.Drawing.Point(161, 156);
             this.txtIATA_Code.Name = "txtIATA_Code";
             this.txtIATA_Code.Size = new System.Drawing.Size(206, 31);
-            this.txtIATA_Code.TabIndex = 9;
+            this.txtIATA_Code.TabIndex = 2;
             // 
             // txtName
             // 
@@ -191,7 +191,7 @@
             this.txtName.Location = new System.Drawing.Point(161, 106);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(206, 31);
-            this.txtName.TabIndex = 10;
+            this.txtName.TabIndex = 1;
             // 
             // menuControl2
             // 

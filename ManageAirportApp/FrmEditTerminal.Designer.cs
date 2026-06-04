@@ -44,7 +44,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(198, 391);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(126, 49);
-            this.btnSubmit.TabIndex = 22;
+            this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "تایید";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -56,7 +56,7 @@
             this.btnCancel.Location = new System.Drawing.Point(452, 391);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(126, 49);
-            this.btnCancel.TabIndex = 23;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Tag = "close";
             this.btnCancel.Text = "لغو";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -79,7 +79,7 @@
             this.txtName.Location = new System.Drawing.Point(200, 132);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(206, 31);
-            this.txtName.TabIndex = 10;
+            this.txtName.TabIndex = 1;
             // 
             // panel1
             // 

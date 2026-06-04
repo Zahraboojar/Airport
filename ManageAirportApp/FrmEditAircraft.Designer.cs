@@ -80,7 +80,7 @@
             0});
             this.numCapacity.Name = "numCapacity";
             this.numCapacity.Size = new System.Drawing.Size(206, 31);
-            this.numCapacity.TabIndex = 21;
+            this.numCapacity.TabIndex = 3;
             this.numCapacity.Value = new decimal(new int[] {
             1,
             0,
@@ -94,7 +94,7 @@
             this.txtSubmit.Location = new System.Drawing.Point(218, 384);
             this.txtSubmit.Name = "txtSubmit";
             this.txtSubmit.Size = new System.Drawing.Size(126, 49);
-            this.txtSubmit.TabIndex = 20;
+            this.txtSubmit.TabIndex = 5;
             this.txtSubmit.Text = "تایید";
             this.txtSubmit.UseVisualStyleBackColor = false;
             this.txtSubmit.Click += new System.EventHandler(this.txtSubmit_Click);
@@ -106,7 +106,7 @@
             this.btnCancel.Location = new System.Drawing.Point(472, 384);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(126, 49);
-            this.btnCancel.TabIndex = 20;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Tag = "close";
             this.btnCancel.Text = "لغو";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -162,7 +162,7 @@
             this.txtRegisterationNum.Location = new System.Drawing.Point(213, 236);
             this.txtRegisterationNum.Name = "txtRegisterationNum";
             this.txtRegisterationNum.Size = new System.Drawing.Size(206, 31);
-            this.txtRegisterationNum.TabIndex = 7;
+            this.txtRegisterationNum.TabIndex = 4;
             // 
             // txtModel
             // 
@@ -171,7 +171,7 @@
             this.txtModel.Location = new System.Drawing.Point(213, 128);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(206, 31);
-            this.txtModel.TabIndex = 9;
+            this.txtModel.TabIndex = 2;
             // 
             // txtMenuFactorerName
             // 
@@ -180,7 +180,7 @@
             this.txtMenuFactorerName.Location = new System.Drawing.Point(213, 78);
             this.txtMenuFactorerName.Name = "txtMenuFactorerName";
             this.txtMenuFactorerName.Size = new System.Drawing.Size(206, 31);
-            this.txtMenuFactorerName.TabIndex = 10;
+            this.txtMenuFactorerName.TabIndex = 1;
             // 
             // menuControl1
             // 

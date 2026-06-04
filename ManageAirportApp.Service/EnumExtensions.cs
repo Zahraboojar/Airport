@@ -198,7 +198,7 @@ namespace ManageAirportApp.Service
                 case PersionDictionary.AirTrafficController:
                     return EmployeeType.AirTrafficController;
                 default:
-                    return EmployeeType.GroundStaff;
+                    return EmployeeType.Management;
             }
         }
         public static string GetEmployeeType(EmployeeType employeeType)

@@ -71,7 +71,7 @@
             this.btnThem.Location = new System.Drawing.Point(12, 12);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(57, 52);
-            this.btnThem.TabIndex = 16;
+            this.btnThem.TabIndex = 6;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -97,7 +97,7 @@
             this.btnFIDS.Location = new System.Drawing.Point(152, 429);
             this.btnFIDS.Name = "btnFIDS";
             this.btnFIDS.Size = new System.Drawing.Size(585, 82);
-            this.btnFIDS.TabIndex = 14;
+            this.btnFIDS.TabIndex = 5;
             this.btnFIDS.Text = "FIDS (اطلاعات پرواز)";
             this.btnFIDS.UseVisualStyleBackColor = false;
             this.btnFIDS.Click += new System.EventHandler(this.btnFIDS_Click);
@@ -110,7 +110,7 @@
             this.button1.Location = new System.Drawing.Point(394, 369);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 34);
-            this.button1.TabIndex = 14;
+            this.button1.TabIndex = 4;
             this.button1.Text = "ورود مهمان";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btn_Click);
@@ -123,7 +123,7 @@
             this.btnLogin.Location = new System.Drawing.Point(364, 313);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(150, 50);
-            this.btnLogin.TabIndex = 14;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "ورود مدیریت";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -187,7 +187,7 @@
             this.chbShowPass.Name = "chbShowPass";
             this.chbShowPass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.chbShowPass.Size = new System.Drawing.Size(395, 27);
-            this.chbShowPass.TabIndex = 10;
+            this.chbShowPass.TabIndex = 2;
             this.chbShowPass.Text = "نمایش گذرواژه";
             this.chbShowPass.UseVisualStyleBackColor = true;
             this.chbShowPass.CheckedChanged += new System.EventHandler(this.chbShowPass_CheckedChanged);
@@ -203,7 +203,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(395, 31);
-            this.txtPassword.TabIndex = 11;
+            this.txtPassword.TabIndex = 1;
             // 
             // label1
             // 
@@ -228,7 +228,7 @@
             this.txtUserName.Location = new System.Drawing.Point(3, 3);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(401, 31);
-            this.txtUserName.TabIndex = 6;
+            this.txtUserName.TabIndex = 0;
             // 
             // lblLoading
             // 
@@ -248,6 +248,7 @@
             this.ClientSize = new System.Drawing.Size(859, 523);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";

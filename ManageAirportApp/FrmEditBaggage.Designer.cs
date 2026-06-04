@@ -91,7 +91,7 @@
             this.numericWeight.Location = new System.Drawing.Point(194, 143);
             this.numericWeight.Name = "numericWeight";
             this.numericWeight.Size = new System.Drawing.Size(206, 31);
-            this.numericWeight.TabIndex = 22;
+            this.numericWeight.TabIndex = 2;
             // 
             // combStatus
             // 
@@ -101,7 +101,7 @@
             this.combStatus.Location = new System.Drawing.Point(194, 247);
             this.combStatus.Name = "combStatus";
             this.combStatus.Size = new System.Drawing.Size(206, 32);
-            this.combStatus.TabIndex = 21;
+            this.combStatus.TabIndex = 4;
             // 
             // combType
             // 
@@ -111,7 +111,7 @@
             this.combType.Location = new System.Drawing.Point(194, 194);
             this.combType.Name = "combType";
             this.combType.Size = new System.Drawing.Size(206, 32);
-            this.combType.TabIndex = 21;
+            this.combType.TabIndex = 3;
             // 
             // combTicket
             // 
@@ -121,7 +121,7 @@
             this.combTicket.Location = new System.Drawing.Point(194, 93);
             this.combTicket.Name = "combTicket";
             this.combTicket.Size = new System.Drawing.Size(206, 32);
-            this.combTicket.TabIndex = 21;
+            this.combTicket.TabIndex = 1;
             // 
             // btnSubmit
             // 
@@ -130,7 +130,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(218, 384);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(126, 49);
-            this.btnSubmit.TabIndex = 20;
+            this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "تایید";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -142,7 +142,7 @@
             this.button1.Location = new System.Drawing.Point(472, 384);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 49);
-            this.button1.TabIndex = 20;
+            this.button1.TabIndex = 6;
             this.button1.Tag = "close";
             this.button1.Text = "لغو";
             this.button1.UseVisualStyleBackColor = false;

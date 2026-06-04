@@ -96,7 +96,7 @@
             this.btnChangeLogo.Location = new System.Drawing.Point(71, 3);
             this.btnChangeLogo.Name = "btnChangeLogo";
             this.btnChangeLogo.Size = new System.Drawing.Size(43, 43);
-            this.btnChangeLogo.TabIndex = 1;
+            this.btnChangeLogo.TabIndex = 6;
             this.btnChangeLogo.Text = "تغییر ";
             this.btnChangeLogo.UseVisualStyleBackColor = false;
             this.btnChangeLogo.Click += new System.EventHandler(this.btnChangeLogo_Click);
@@ -120,7 +120,7 @@
             this.combRegion.Location = new System.Drawing.Point(172, 265);
             this.combRegion.Name = "combRegion";
             this.combRegion.Size = new System.Drawing.Size(206, 32);
-            this.combRegion.TabIndex = 32;
+            this.combRegion.TabIndex = 4;
             // 
             // combCity
             // 
@@ -130,7 +130,7 @@
             this.combCity.Location = new System.Drawing.Point(172, 326);
             this.combCity.Name = "combCity";
             this.combCity.Size = new System.Drawing.Size(206, 32);
-            this.combCity.TabIndex = 33;
+            this.combCity.TabIndex = 5;
             // 
             // label9
             // 
@@ -205,7 +205,7 @@
             this.txtICAO_Code.Location = new System.Drawing.Point(172, 214);
             this.txtICAO_Code.Name = "txtICAO_Code";
             this.txtICAO_Code.Size = new System.Drawing.Size(206, 31);
-            this.txtICAO_Code.TabIndex = 24;
+            this.txtICAO_Code.TabIndex = 3;
             // 
             // txtIATA_Code
             // 
@@ -214,7 +214,7 @@
             this.txtIATA_Code.Location = new System.Drawing.Point(172, 159);
             this.txtIATA_Code.Name = "txtIATA_Code";
             this.txtIATA_Code.Size = new System.Drawing.Size(206, 31);
-            this.txtIATA_Code.TabIndex = 25;
+            this.txtIATA_Code.TabIndex = 2;
             // 
             // txtName
             // 
@@ -223,7 +223,7 @@
             this.txtName.Location = new System.Drawing.Point(172, 109);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(206, 31);
-            this.txtName.TabIndex = 26;
+            this.txtName.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -232,7 +232,7 @@
             this.btnCancel.Location = new System.Drawing.Point(477, 448);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(126, 49);
-            this.btnCancel.TabIndex = 22;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Tag = "close";
             this.btnCancel.Text = "لغو";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -244,7 +244,7 @@
             this.btnSet.Location = new System.Drawing.Point(209, 448);
             this.btnSet.Name = "btnSet";
             this.btnSet.Size = new System.Drawing.Size(126, 49);
-            this.btnSet.TabIndex = 20;
+            this.btnSet.TabIndex = 7;
             this.btnSet.Text = "تایید";
             this.btnSet.UseVisualStyleBackColor = false;
             this.btnSet.Click += new System.EventHandler(this.btnSet_Click);

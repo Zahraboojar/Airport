@@ -56,7 +56,6 @@ namespace ManageAirportApp.Service
 
                 existingGate.Capacity = entity.Capacity;
                 existingGate.TerminalId = entity.TerminalId;
-                existingGate.Terminal = null;
                 existingGate.UpdatedById = LoginedUserService.EmployeeId;
                 existingGate.UpdatedAt = DateTime.Now;
 

@@ -76,7 +76,7 @@
             this.combAirport.Name = "combAirport";
             this.combAirport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.combAirport.Size = new System.Drawing.Size(339, 32);
-            this.combAirport.TabIndex = 22;
+            this.combAirport.TabIndex = 3;
             // 
             // combRegion
             // 
@@ -88,7 +88,7 @@
             this.combRegion.Name = "combRegion";
             this.combRegion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.combRegion.Size = new System.Drawing.Size(339, 32);
-            this.combRegion.TabIndex = 22;
+            this.combRegion.TabIndex = 1;
             this.combRegion.SelectedIndexChanged += new System.EventHandler(this.combRegion_SelectedIndexChanged);
             // 
             // combCity
@@ -101,7 +101,7 @@
             this.combCity.Name = "combCity";
             this.combCity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.combCity.Size = new System.Drawing.Size(339, 32);
-            this.combCity.TabIndex = 22;
+            this.combCity.TabIndex = 2;
             this.combCity.SelectedIndexChanged += new System.EventHandler(this.combCity_SelectedIndexChanged);
             // 
             // label1
@@ -172,7 +172,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(140, 369);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(149, 55);
-            this.btnSubmit.TabIndex = 24;
+            this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "تایید";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);

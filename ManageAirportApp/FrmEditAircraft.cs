@@ -50,17 +50,18 @@ namespace ManageAirportApp
                 Capacity = (int)numCapacity.Value
 
             };
+            OperationResult result;
             if (_aircraft == null)
             {
-                var result = await service.AddAsync(aircraft);
+                result = await service.AddAsync(aircraft);
                 CustomMessageBox.Message(result.Message, result.IsSuccess);
-                Close();
             }
             else
             {
-                var result = await service.UpdateAsync(aircraft, _aircraft.Id);
+                result = await service.UpdateAsync(aircraft, _aircraft.Id);
                 CustomMessageBox.Message(result.Message, result.IsSuccess);
             }
+            if (result.IsSuccess) Close();
         }
 
     }

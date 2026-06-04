@@ -72,7 +72,7 @@
             this.combEvent.Location = new System.Drawing.Point(182, 230);
             this.combEvent.Name = "combEvent";
             this.combEvent.Size = new System.Drawing.Size(206, 32);
-            this.combEvent.TabIndex = 22;
+            this.combEvent.TabIndex = 2;
             // 
             // combFlight
             // 
@@ -82,7 +82,7 @@
             this.combFlight.Location = new System.Drawing.Point(182, 172);
             this.combFlight.Name = "combFlight";
             this.combFlight.Size = new System.Drawing.Size(206, 32);
-            this.combFlight.TabIndex = 22;
+            this.combFlight.TabIndex = 1;
             // 
             // button2
             // 
@@ -91,7 +91,7 @@
             this.button2.Location = new System.Drawing.Point(218, 384);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 49);
-            this.button2.TabIndex = 20;
+            this.button2.TabIndex = 3;
             this.button2.Text = "تایید";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -103,7 +103,7 @@
             this.button1.Location = new System.Drawing.Point(472, 384);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 49);
-            this.button1.TabIndex = 20;
+            this.button1.TabIndex = 4;
             this.button1.Tag = "close";
             this.button1.Text = "لغو";
             this.button1.UseVisualStyleBackColor = false;

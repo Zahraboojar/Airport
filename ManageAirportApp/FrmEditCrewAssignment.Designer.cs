@@ -66,7 +66,7 @@
             this.CombEmployeeRole.Location = new System.Drawing.Point(188, 272);
             this.CombEmployeeRole.Name = "CombEmployeeRole";
             this.CombEmployeeRole.Size = new System.Drawing.Size(206, 32);
-            this.CombEmployeeRole.TabIndex = 21;
+            this.CombEmployeeRole.TabIndex = 3;
             // 
             // CombEmployee
             // 
@@ -76,7 +76,7 @@
             this.CombEmployee.Location = new System.Drawing.Point(188, 210);
             this.CombEmployee.Name = "CombEmployee";
             this.CombEmployee.Size = new System.Drawing.Size(206, 32);
-            this.CombEmployee.TabIndex = 21;
+            this.CombEmployee.TabIndex = 2;
             // 
             // combFlight
             // 
@@ -87,7 +87,7 @@
             this.combFlight.Location = new System.Drawing.Point(188, 140);
             this.combFlight.Name = "combFlight";
             this.combFlight.Size = new System.Drawing.Size(206, 32);
-            this.combFlight.TabIndex = 21;
+            this.combFlight.TabIndex = 1;
             // 
             // btnSubmit
             // 
@@ -96,7 +96,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(218, 384);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(126, 49);
-            this.btnSubmit.TabIndex = 20;
+            this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "تایید";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -108,7 +108,7 @@
             this.btnCancel.Location = new System.Drawing.Point(472, 384);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(126, 49);
-            this.btnCancel.TabIndex = 20;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Tag = "close";
             this.btnCancel.Text = "لغو";
             this.btnCancel.UseVisualStyleBackColor = false;
