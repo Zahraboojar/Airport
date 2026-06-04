@@ -140,7 +140,7 @@ namespace ManageAirportApp
 
                 foreach (var gate in data.Data)
                 {
-                    cmb.Items.Add($"{gate.Terminal.Name} - {gate.GateNumber}");
+                    cmb.Items.Add($"{gate.Terminal?.Name} - {gate.GateNumber}");
                     if (id == gate.Id)
                     {
                         cmb.SelectedItem = gate.GateNumber;
@@ -216,18 +216,21 @@ namespace ManageAirportApp
             if (data.IsSuccess)
             {
                 cmb.Items.Clear();
-                var issetSeatNumbers = ArrayOperations.CalculateDifference(flight.Aircraft.Capacity, data.Data.ToArray());
-                if (seatNumber != 0)
+                if (flight.Aircraft != null)
                 {
-                    cmb.Items.Add(seatNumber.ToString());
-                    cmb.SelectedItem = seatNumber.ToString();
-                }
-                foreach (var item in issetSeatNumbers)
-                {
-                    cmb.Items.Add(item);
-                    if (item == seatNumber)
+                    var issetSeatNumbers = ArrayOperations.CalculateDifference(flight.Aircraft.Capacity, data.Data.ToArray());
+                    if (seatNumber != 0)
                     {
-                        cmb.SelectedItem = item;
+                        cmb.Items.Add(seatNumber.ToString());
+                        cmb.SelectedItem = seatNumber.ToString();
+                    }
+                    foreach (var item in issetSeatNumbers)
+                    {
+                        cmb.Items.Add(item);
+                        if (item == seatNumber)
+                        {
+                            cmb.SelectedItem = item;
+                        }
                     }
                 }
             }

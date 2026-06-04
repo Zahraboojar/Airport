@@ -20,7 +20,8 @@ namespace ManageAitportApp.DAL
             if (id != 0)
             {
                 var all = set
-                        .Where(x => x.IsDeleted == selectProperties.IsDeleted)
+                        .Where(x => x.IsDeleted == selectProperties.IsDeleted &&
+                        x.Terminal.AirportId == id)
                         .OrderBy(x => x.Id)
                         .Skip(selectProperties.Offset)
                         .Take(selectProperties.Limit);

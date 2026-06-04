@@ -73,42 +73,45 @@ namespace ManageAirportApp.Service
 
                 var ticket = result.Data;
                 var flight = ticket.Flight;
-                report.Dictionary.Variables["VarFullName"].Value =
-                 $"{ticket.Passenger.FirstName} {ticket.Passenger.LastName}";
+                if (report.Dictionary.Variables.Count > 0)
+                {
+                    report.Dictionary.Variables["VarFullName"].Value =
+                     $"{ticket.Passenger.FirstName} {ticket?.Passenger?.LastName}";
 
-                report.Dictionary.Variables["VarAircraft"].Value =
-                    flight.Aircraft.RegistrationNumber;
+                    report.Dictionary.Variables["VarAircraft"].Value =
+                        flight.Aircraft.RegistrationNumber;
 
-                report.Dictionary.Variables["VarAircraftModel"].Value =
-                    flight.Aircraft.Model;
+                    report.Dictionary.Variables["VarAircraftModel"].Value =
+                        flight.Aircraft.Model;
 
-                report.Dictionary.Variables["VarArrivalAirport"].Value =
-                    $"{flight.ArrivalAirport.Region} / {flight.ArrivalAirport.City}";
+                    report.Dictionary.Variables["VarArrivalAirport"].Value =
+                        $"{flight.ArrivalAirport.Region} / {flight.ArrivalAirport.City}";
 
-                report.Dictionary.Variables["VarDepartureAirport"].Value =
-                    $"{flight.DepartureAirport.Region} / {flight.DepartureAirport.City}";
+                    report.Dictionary.Variables["VarDepartureAirport"].Value =
+                        $"{flight.DepartureAirport.Region} / {flight.DepartureAirport.City}";
 
-                report.Dictionary.Variables["VarTerminalGate"].Value =
-                    $"{flight.Gate.Terminal.Name} / {flight.Gate.GateNumber}";
+                    report.Dictionary.Variables["VarTerminalGate"].Value =
+                        $"{flight.Gate.Terminal.Name} / {flight.Gate.GateNumber}";
 
-                report.Dictionary.Variables["VarArrivalTime"].Value =
-                    flight.ScheduledArrivalTime.ToString("yyyy/MM/dd HH:mm");
+                    report.Dictionary.Variables["VarArrivalTime"].Value =
+                        flight.ScheduledArrivalTime.ToString("yyyy/MM/dd HH:mm");
 
-                report.Dictionary.Variables["VarClass"].Value =
-                    EnumExtensions.GetFlightClass(ticket.Class);
+                    report.Dictionary.Variables["VarClass"].Value =
+                        EnumExtensions.GetFlightClass(ticket.Class);
 
-                report.Dictionary.Variables["VarType"].Value =
-                    EnumExtensions.GetTicketType(ticket.TicketType);
+                    report.Dictionary.Variables["VarType"].Value =
+                        EnumExtensions.GetTicketType(ticket.TicketType);
 
-                report.Dictionary.Variables["VarSeatNumber"].Value =
-                    ticket.SeatNumber.ToString();
+                    report.Dictionary.Variables["VarSeatNumber"].Value =
+                        ticket.SeatNumber.ToString();
 
-                report.Dictionary.Variables["VarTicketNumber"].Value =
-                    ticket.TicketNumber;
+                    report.Dictionary.Variables["VarTicketNumber"].Value =
+                        ticket.TicketNumber;
 
-                report.Dictionary.Variables["VarQRCode"].Value =
-                    ticket.TicketNumber;
+                    report.Dictionary.Variables["VarQRCode"].Value =
+                        ticket.TicketNumber;
 
+                }
                 Show(report);
             }
             catch (Exception ex)

@@ -70,7 +70,6 @@
           <Name>VarArrivalAirport</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-          <Text>شهر </Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </VarArrivalAirport>
@@ -137,7 +136,6 @@
           <Name>VarDepartureAirport</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-          <Text>شهر </Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </VarDepartureAirport>
@@ -151,7 +149,6 @@
           <Name>VarTerminalGate</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-          <Text>شهر </Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </VarTerminalGate>
@@ -165,7 +162,6 @@
           <Name>VarArrivalTime</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-          <Text>شهر </Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </VarArrivalTime>
@@ -235,7 +231,6 @@
           <Name>VarAircraft</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-          <Text>مبدا :</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </VarAircraft>
@@ -249,7 +244,6 @@
           <Name>VarAircraftModel</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-          <Text>مبدا :</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </VarAircraftModel>
@@ -263,7 +257,6 @@
           <Name>VarClass</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-          <Text>مبدا :</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </VarClass>
@@ -277,7 +270,6 @@
           <Name>VarTicketNumber</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-          <Text>شماره بلیط</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </VarTicketNumber>
@@ -305,7 +297,6 @@
           <Name>VarSeatNumber</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-          <Text>شماره بلیط</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </VarSeatNumber>
@@ -333,7 +324,6 @@
           <Name>VarType</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-          <Text>مبدا :</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </VarType>
@@ -384,10 +374,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>5/31/2026 2:28:20 PM</ReportChanged>
+  <ReportChanged>6/4/2026 5:37:36 PM</ReportChanged>
   <ReportCreated>5/31/2026 1:51:55 PM</ReportCreated>
-  <ReportFile>C:\Users\Arta\Documents\c# boojar\ManageAirportApp\ManageAirportApp.Service\bin\Debug\Ticket.mrt</ReportFile>
-  <ReportGuid>1bf753ba3e114f9597785cb89a6d5f3b</ReportGuid>
+  <ReportFile>C:\Users\Arta\Documents\c# boojar\ManageAirportApp\Reports\Ticket.mrt</ReportFile>
+  <ReportGuid>2302aebbf3404ba590f4cfe93731f19e</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2022.1.1.0</ReportVersion>
