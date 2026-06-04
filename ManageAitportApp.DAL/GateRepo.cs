@@ -62,6 +62,13 @@ namespace ManageAitportApp.DAL
             if (result == null)
                 return OperationResult<Gate>.Failed(Messages.NotFound);
             return OperationResult<Gate>.Success(result);
+
+        }
+        public override async Task<int> GetCountAllAsync(SelectProperties sp)
+        {
+            var count = await set.Where(x => x.IsDeleted == sp.IsDeleted && x.TerminalId == sp.TerminalId).CountAsync();
+
+            return count;
         }
     }
 }

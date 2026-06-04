@@ -49,9 +49,9 @@ namespace ManageAirportApp.Service
         }
         protected abstract TDto MapEntityToDto(TEntity entity);
 
-        public async Task<OperationResult<int>> GetCountAllAsync(bool isDeleted = false)
+        public async Task<int> GetCountAllAsync(SelectProperties sp)
         {
-            return await _repo.GetCountAllAsync(isDeleted);
+            return await _repo.GetCountAllAsync(sp);
         }
     }
 }

@@ -26,10 +26,14 @@ namespace ManageAirportApp.DAL
         public DbSet<Passenger> Passengers { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Terminal> Terminals { get; set; }
-        public DbSet<CheckIn> CheckIn { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Gate>()
+            .Property(g => g.GateNumber)
+            .HasMaxLength(2)
+            .IsRequired();
+
             base.OnModelCreating(modelBuilder);
             // ====== Flight ======
             modelBuilder.Entity<Flight>()
@@ -62,7 +66,7 @@ namespace ManageAirportApp.DAL
 
             // ====== Employee ======
             modelBuilder.Entity<Employee>()
-                .HasRequired(e => e.Airport)
+                .HasOptional(e => e.Airport)
                 .WithMany()
                 .HasForeignKey(e => e.AirportId)
                 .WillCascadeOnDelete(false);
@@ -87,6 +91,10 @@ namespace ManageAirportApp.DAL
                 .WithMany(t => t.Gates)
                 .HasForeignKey(g => g.TerminalId)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Gate>()
+            .HasIndex(g => new { g.TerminalId, g.GateNumber })
+            .IsUnique();
 
             // ====== Terminal ======
             modelBuilder.Entity<Terminal>()
@@ -133,16 +141,9 @@ namespace ManageAirportApp.DAL
                 .HasForeignKey(b => b.TicketId)
                 .WillCascadeOnDelete(false);
 
-            // ====== CheckIn ======
-            modelBuilder.Entity<CheckIn>()
-                .HasRequired(b => b.Ticket)
-                .WithMany()
-                .HasForeignKey(b => b.TicketId)
-                .WillCascadeOnDelete(false);
-
             // ====== Log ======
             modelBuilder.Entity<Log>()
-                .HasRequired(l => l.Airport)
+                .HasOptional(l => l.Airport)
                 .WithMany()
                 .HasForeignKey(l => l.AirportId)
                 .WillCascadeOnDelete(false);

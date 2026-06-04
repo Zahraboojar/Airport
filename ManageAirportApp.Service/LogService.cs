@@ -25,8 +25,8 @@ namespace ManageAirportApp.Service
                 Action = EnumExtensions.GetLogAction(data.Action),
                 TableName = data.TableName,
                 Description = data.Description,
-                AirportId = LoginedUserService.Employee.AirportId == null ? 0 :(int)LoginedUserService.Employee.AirportId,
-                CreatedById = LoginedUserService.EmployeeId
+                AirportId = LoginedUserService.Employee?.AirportId == null ? (int?)null : (int)LoginedUserService.Employee.AirportId,
+                CreatedById = (LoginedUserService.EmployeeId > 0) ? LoginedUserService.EmployeeId : (int?)null
             };
             return await _repo.AddAsync(newLog);
         }
@@ -43,7 +43,7 @@ namespace ManageAirportApp.Service
                 Action = EnumExtensions.GetLogAction(entity.Action),
                 TableName = entity.TableName,
                 Description = entity.Description,
-                AirportId = entity.AirportId,
+                AirportId = entity.AirportId ?? 0,
                 Id = entity.Id,
                 DeletedBy = entity.DeletedBy,
                 CreatedAt = entity.CreatedAt,

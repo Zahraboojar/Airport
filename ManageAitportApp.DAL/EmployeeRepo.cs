@@ -49,7 +49,7 @@ namespace ManageAirportApp.DAL
         public async Task<OperationResult<Employee>> GetByUserNameAsync(string username)
         {
             var result = await set
-                .Where(x => x.UserName.Contains(username))
+                .Where(x => x.UserName == username)
                 .SingleOrDefaultAsync();
             if (result == null)
                 return OperationResult<Employee>.Failed(Messages.NotFoundEntity);

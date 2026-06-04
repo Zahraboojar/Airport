@@ -25,7 +25,9 @@ namespace ManageAirportApp.Service
             {
                 var employee = new Employee()
                 {
-                    AirportId = LoginedUserService.Employee.AirportId,
+                    AirportId = entity.AirportId == 0 ? 
+                        LoginedUserService.Employee?.AirportId == null ? (int?)null : (int)LoginedUserService.Employee?.AirportId :
+                        entity.AirportId,
                     EmployeeType = EnumExtensions.GetEmployeeType(entity.EmployeeType),
                     UserName = entity.UserName,
                     Password = entity.Password,
@@ -36,7 +38,7 @@ namespace ManageAirportApp.Service
                     PhoneNumber = entity.PhoneNumber,
                     Address = entity.Address,
                     PassportNumber = entity.PassportNumber,
-                    CreatedById = LoginedUserService.EmployeeId
+                    CreatedById = (LoginedUserService.EmployeeId > 0) ? LoginedUserService.EmployeeId : (int?)null
                 };
                 var result = await _repo.AddAsync(employee);
                 if (result.IsSuccess)
@@ -63,7 +65,9 @@ namespace ManageAirportApp.Service
                 {
                     var existingEmployee = employeeResult.Data;
 
-                    existingEmployee.AirportId = entity.AirportId;
+                    existingEmployee.AirportId = entity.AirportId == 0 ?
+                        LoginedUserService.Employee?.AirportId == null ? (int?)null : (int)LoginedUserService.Employee?.AirportId :
+                        entity.AirportId;
                     existingEmployee.EmployeeType = EnumExtensions.GetEmployeeType(entity.EmployeeType);
                     existingEmployee.UserName = entity.UserName;
                     if (existingEmployee.Password != "" || existingEmployee.Password != null)

@@ -11,6 +11,6 @@ namespace ManageAirportApp.Service
     {
         Task<OperationResult<TEntity>> GetByIdAsync(int id, bool isDeleted = false);
         Task<OperationResult<List<TDto>>> GetAllAsync(SelectProperties selectProperties);
-        Task<OperationResult<int>> GetCountAllAsync(bool isDeleted = false);
+        Task<int> GetCountAllAsync(SelectProperties selectProperties);
     }
 }

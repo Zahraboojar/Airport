@@ -10,6 +10,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ManageAirportApp.Service
 {
@@ -34,7 +35,7 @@ namespace ManageAirportApp.Service
                     IATA_Code = airportDto.IATA_Code,
                     ICAO_Code = airportDto.ICAO_Code,
                     Logo = null,
-                    CreatedById = LoginedUserService.EmployeeId
+                    CreatedById = (LoginedUserService.EmployeeId > 0) ? LoginedUserService.EmployeeId : (int?)null
                 };  
                 var result = await _repo.AddAsync(airport);
                 if (result.IsSuccess)
@@ -49,6 +50,11 @@ namespace ManageAirportApp.Service
         public async Task<OperationResult<Airport>> GetByNameAsync(string name)
         {
             return await _repo.GetByNameAsync(name);
+        }
+
+        public async Task<OperationResult<Airport>> GetLastAsync(SelectProperties sp)
+        {
+            return await _repo.GetLastAsync(sp);
         }
 
         public async Task<OperationResult> UpdateAsync(AirportDto airportDto, int id)

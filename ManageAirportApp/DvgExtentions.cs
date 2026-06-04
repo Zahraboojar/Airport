@@ -126,12 +126,12 @@ namespace ManageAirportApp
             {
                 var service = ServiceFactory<TService>.Instance;
                 var operationResult = await service.GetAllAsync(sp);
-                var countAll = await service.GetCountAllAsync();
+                var countAll = await service.GetCountAllAsync(sp);
 
                 if (operationResult.IsSuccess)
                 {
                     FillDvg<TEntity, TDto>(dvg, operationResult, sp);
-                    txt = SetPaginationText(sp.Limit, sp.Offset, countAll.Data);
+                    txt = SetPaginationText(sp.Limit, sp.Offset, countAll);
                 }
                 else
                 {

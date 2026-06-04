@@ -11,7 +11,7 @@ namespace ManageAirportApp.Domain
         public Actions Action { get; set; }
         public string TableName { get; set; }
         public string Description { get; set; }
-        public int AirportId { get; set; }
+        public int? AirportId { get; set; }
         public virtual Airport Airport { get; set; } 
 
     }

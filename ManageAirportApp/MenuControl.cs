@@ -28,7 +28,8 @@ namespace ManageAirportApp
             if (LoginedUserService.Employee.Airport != null)
             {
                 lblTitle.Text = LoginedUserService.Employee.Airport.Name;
-                string logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", LoginedUserService.Employee.Airport.Logo);
+                string logoFileName = LoginedUserService.Employee?.Airport?.Logo ?? "default-logo.png";
+                string logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", logoFileName);
 
                 if (File.Exists(logoPath))
                 {

@@ -184,6 +184,22 @@
     <Compile Include="Migrations\202605310853480_deleteSettingTable.Designer.cs">
       <DependentUpon>202605310853480_deleteSettingTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202606020656371_fix database.cs" />
+    <Compile Include="Migrations\202606020656371_fix database.Designer.cs">
+      <DependentUpon>202606020656371_fix database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202606020736302_set optional.cs" />
+    <Compile Include="Migrations\202606020736302_set optional.Designer.cs">
+      <DependentUpon>202606020736302_set optional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202606041129184_setnullableforairportIdFieldLogTable.cs" />
+    <Compile Include="Migrations\202606041129184_setnullableforairportIdFieldLogTable.Designer.cs">
+      <DependentUpon>202606041129184_setnullableforairportIdFieldLogTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202606041206169_editgatetable.cs" />
+    <Compile Include="Migrations\202606041206169_editgatetable.Designer.cs">
+      <DependentUpon>202606041206169_editgatetable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PassengerRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -271,6 +287,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202605310853480_deleteSettingTable.resx">
       <DependentUpon>202605310853480_deleteSettingTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202606020656371_fix database.resx">
+      <DependentUpon>202606020656371_fix database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202606020736302_set optional.resx">
+      <DependentUpon>202606020736302_set optional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202606041129184_setnullableforairportIdFieldLogTable.resx">
+      <DependentUpon>202606041129184_setnullableforairportIdFieldLogTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202606041206169_editgatetable.resx">
+      <DependentUpon>202606041206169_editgatetable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

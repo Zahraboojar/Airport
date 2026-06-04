@@ -49,12 +49,12 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.menuControl2 = new ManageAirportApp.MenuControl();
-            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.menuControl2 = new ManageAirportApp.MenuControl();
             this.label10 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -196,7 +196,6 @@
             // txtRepassword
             // 
             this.txtRepassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
-            this.txtRepassword.Enabled = false;
             this.txtRepassword.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtRepassword.Location = new System.Drawing.Point(3, 88);
             this.txtRepassword.Name = "txtRepassword";
@@ -206,7 +205,6 @@
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
-            this.txtPassword.Enabled = false;
             this.txtPassword.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPassword.Location = new System.Drawing.Point(3, 36);
             this.txtPassword.Name = "txtPassword";
@@ -225,7 +223,6 @@
             // txtUserName
             // 
             this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
-            this.txtUserName.Enabled = false;
             this.txtUserName.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtUserName.Location = new System.Drawing.Point(10, 169);
             this.txtUserName.Name = "txtUserName";
@@ -299,25 +296,19 @@
             this.panel1.Size = new System.Drawing.Size(806, 548);
             this.panel1.TabIndex = 3;
             // 
-            // menuControl2
+            // groupBox1
             // 
-            this.menuControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
-            this.menuControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.menuControl2.Location = new System.Drawing.Point(0, 0);
-            this.menuControl2.Name = "menuControl2";
-            this.menuControl2.Size = new System.Drawing.Size(806, 65);
-            this.menuControl2.TabIndex = 27;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(288, 170);
-            this.label7.Name = "label7";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label7.Size = new System.Drawing.Size(74, 28);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "نام کاربری:";
+            this.groupBox1.Controls.Add(this.txtRepassword);
+            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Location = new System.Drawing.Point(7, 222);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox1.Size = new System.Drawing.Size(350, 144);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "تغییر گذرواژه";
             // 
             // label8
             // 
@@ -341,6 +332,15 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "تکرار گذرواژه :";
             // 
+            // menuControl2
+            // 
+            this.menuControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
+            this.menuControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menuControl2.Location = new System.Drawing.Point(0, 0);
+            this.menuControl2.Name = "menuControl2";
+            this.menuControl2.Size = new System.Drawing.Size(806, 65);
+            this.menuControl2.TabIndex = 27;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -352,19 +352,16 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "آدرس :";
             // 
-            // groupBox1
+            // label7
             // 
-            this.groupBox1.Controls.Add(this.txtRepassword);
-            this.groupBox1.Controls.Add(this.txtPassword);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(7, 222);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(350, 144);
-            this.groupBox1.TabIndex = 28;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "تغییر گذرواژه";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label7.Location = new System.Drawing.Point(288, 170);
+            this.label7.Name = "label7";
+            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label7.Size = new System.Drawing.Size(74, 28);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "نام کاربری:";
             // 
             // FrmProfile
             // 

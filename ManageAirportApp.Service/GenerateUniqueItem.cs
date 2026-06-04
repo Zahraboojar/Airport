@@ -1,5 +1,7 @@
-﻿using ManageAirportApp.Domain;
+﻿using ManageAirportApp.DAL;
+using ManageAirportApp.Domain;
 using ManageAirportApp.Share;
+using ManageSchoolApp.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,6 +65,24 @@ namespace ManageAirportApp.Service
                 number += random.Next(0, 10).ToString();
             }
             return number;
+        }
+
+        public static async Task<string> GenerateGateNumber(int terminalId, int capacity)
+        {
+            var service = ServiceFactory<GateService>.Instance;
+            var sp = new SelectProperties
+            {
+                TerminalId = terminalId,
+                AirportId = LoginedUserService.Employee?.AirportId ?? 0,
+            };
+            int gateCount = await service.GetCountAllAsync(sp);
+
+            int letterIndex = gateCount / 3;
+            int numberIndex = (gateCount % 3) + 1;
+
+            char letter = (char)('a' + letterIndex);
+
+            return $"{letter}{numberIndex}";
         }
     }
 }

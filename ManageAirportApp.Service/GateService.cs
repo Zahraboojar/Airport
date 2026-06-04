@@ -20,6 +20,7 @@ namespace ManageAirportApp.Service
 
         public async Task<OperationResult> AddAsync(GateDto entity)
         {
+            entity.GateNumber = await GenerateUniqueItem.GenerateGateNumber(entity.TerminalId, entity.Capacity);
             var gate = new Gate()
             {
                 GateNumber = entity.GateNumber,
@@ -31,7 +32,7 @@ namespace ManageAirportApp.Service
             var result = await _repo.AddAsync(gate);
             if (result.IsSuccess)
             {
-                await SetLogs.SetGate(Actions.Add, $"یک گیت به ترمینال {entity.Terminal.Name} اضافه شد");
+                await SetLogs.SetGate(Actions.Add, $" گیت به ترمینال {entity.Terminal.Name} اضافه شد");
             }
             return result;
         }
@@ -45,23 +46,6 @@ namespace ManageAirportApp.Service
         {
             return await _repo.GetLastAsync(sp);
         }
-        public async Task<OperationResult<List<Gate>>> GetAllAvaliableAsync(SelectProperties sp, Gate selectedGate = null)
-        {
-            var flightService = ServiceFactory<FlightService>.Instance;
-            var flightResult = await flightService.GetAllEntityAsync(sp);
-            if (flightResult.IsSuccess)
-            {
-                var result = flightResult.Data.Where(x => x.Status == FlightStatus.Scheduled || x.Status == FlightStatus.Departed)
-                    .Select(x => x.Id).ToArray();
-                var list = await ArrayOperations.GetAvailableGate(result);
-                if (selectedGate != null)
-                {
-                    list.Add(selectedGate);
-                }
-                return OperationResult<List<Gate>>.Success(list);
-            }
-            return OperationResult<List<Gate>>.Failed(Messages.NotFound);
-        }
         public async Task<OperationResult> UpdateAsync(GateDto entity, int id)
         {
             var gateResult = await GetByIdAsync(id);
@@ -70,7 +54,6 @@ namespace ManageAirportApp.Service
 
                 var existingGate = gateResult.Data;
 
-                existingGate.GateNumber = entity.GateNumber;
                 existingGate.Capacity = entity.Capacity;
                 existingGate.TerminalId = entity.TerminalId;
                 existingGate.Terminal = null;

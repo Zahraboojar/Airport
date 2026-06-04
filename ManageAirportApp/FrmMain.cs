@@ -159,6 +159,11 @@ namespace ManageAirportApp
 
                 if (mainDvg.Columns[e.ColumnIndex].Name == "btnUpdate")
                 {
+                    if (data is EmployeeDto employee && LoginedUserService.EmployeeId == employee.Id)
+                    {
+                        new FrmProfile().ShowDialog();
+                        return;
+                    }
                     await DvgExtentions.DvgBtnAction(_current, data, Actions.Update);
                 }
 

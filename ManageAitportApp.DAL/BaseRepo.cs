@@ -72,14 +72,11 @@ namespace ManageAitportApp.DAL
             return OperationResult.Success(Messages.UpdatedSuccessfully);
         }
 
-        public async Task<OperationResult<int>> GetCountAllAsync(bool isDeleted = false)
+        public virtual async Task<int> GetCountAllAsync(SelectProperties sp)
         {
-            var count = await set.Where(x => x.IsDeleted == isDeleted).CountAsync();
+            var count = await set.Where(x => x.IsDeleted == sp.IsDeleted).CountAsync();
 
-            if (count == null)
-                return OperationResult<int>.Failed(Messages.NotFound);
-
-            return OperationResult<int>.Success(count);
+            return count;
         }
     }
 }

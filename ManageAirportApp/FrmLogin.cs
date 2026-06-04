@@ -61,7 +61,7 @@ namespace ManageAirportApp
             var dbCreated = await DatabaseService.EnsureDatabaseCreatedAsync();
             if (!dbCreated)
             {
-                MessageBox.Show("error in create db");
+                CustomMessageBox.Error("مشکلی در ساخت پایگاه داده رخ داد");
                 Application.Exit();
                 return;
             }
@@ -95,75 +95,83 @@ namespace ManageAirportApp
         private async void btn_Click(object sender, EventArgs e)
         {
             var employeeService = ServiceFactory<EmployeeService>.Instance;
+            var allEmployeeCount = await employeeService.GetCountAllAsync(new SelectProperties());
             var employeeResult = await employeeService.GetByUsernameAsync("ali");
             var airportService = ServiceFactory<AirportService>.Instance;
-            var airportResult = await airportService.GetAllEntityAsync(new SelectProperties());
-            if (!employeeResult.IsSuccess)
+            var Lastairport = await airportService.GetLastAsync(new SelectProperties());
+
+            if (allEmployeeCount > 0)
             {
-                int airportId = 0;
-                if (!airportResult.IsSuccess)
-                {
-                    var airportDto = new AirportDto
-                    {
-                        City = "Tehran",
-                        Region = "Iran",
-                        CreationBy = null,
-                        IATA_Code = "IRN",
-                        ICAO_Code = "GYDR",
-                        Name = "فرودگاه مهرآباد",
-                    };
-                    var airresult = await airportService.AddAsync(airportDto);
-                    if (airresult.IsSuccess)
-                    {
-                        var data = await airportService.GetByNameAsync(airportDto.Name);
-                        if (data.IsSuccess)
-                        {
-                            airportId = data.Data.Id;
-                        }
-                    }
-
-                }
-                else
-                {
-                    airportId = airportResult.Data[0].Id;
-                }
-                var employeeDto = new EmployeeDto
-                {
-                    Address = "",
-                    AirportId = airportId,
-                    Email = "ali@gmail.com",
-                    LastName = "alavi",
-                    FirstName = "ali",
-                    UserName = "ali",
-                    PassportNumber = "A12345678",
-                    NationalCode = "1250902452",
-                    Password = "123",
-                    PhoneNumber = "09135467689",
-                    DateOfBirth = DateTime.Now,
-                    CreationBy = null,
-                    EmployeeType = EnumExtensions.GetEmployeeType(EmployeeType.Management),
-                };
-
-                var result = await employeeService.AddAsync(employeeDto);
-                if (result.IsSuccess)
-                {
-                    var loginService = new LoginedUserService();
-                    var loginResult = await loginService.Login("ali", "123");
-                    if (loginResult.IsSuccess)
-                    {
-
-                        CustomMessageBox.Success(Messages.Welcome +
-                            Environment.NewLine + "username = ali , password = 123");
-                        this.Hide();
-                        new FrmMain().ShowDialog();
-
-                        Close();
-                    }
-                }
+                CustomMessageBox.Error("کاربر مهمان قبلا ایجاد شده ");
             }
             else
             {
-                CustomMessageBox.Error("کاربر مهمان قبلا ایجاد شده " + Environment.NewLine + "username = ali , password = 123");
+                if (!employeeResult.IsSuccess)
+                {
+                    int airportId = 0;
+                    if (!Lastairport.IsSuccess)
+                    {
+                        var airportDto = new AirportDto
+                        {
+                            City = "Tehran",
+                            Region = "Iran",
+                            CreationBy = null,
+                            IATA_Code = "IRN",
+                            ICAO_Code = "GYDR",
+                            Name = "فرودگاه مهرآباد",
+                        };
+                        var airresult = await airportService.AddAsync(airportDto);
+                        if (airresult.IsSuccess)
+                        {
+                            var data = await airportService.GetByNameAsync(airportDto.Name);
+                            if (data.IsSuccess)
+                            {
+                                airportId = data.Data.Id;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        airportId = Lastairport.Data.Id;
+                    }
+                    var employeeDto = new EmployeeDto
+                    {
+                        Address = "",
+                        AirportId = airportId,
+                        Email = "ali@gmail.com",
+                        LastName = "alavi",
+                        FirstName = "ali",
+                        UserName = "ali",
+                        PassportNumber = "A12345678",
+                        NationalCode = "1234567891",
+                        Password = "123",
+                        PhoneNumber = "09135467689",
+                        DateOfBirth = DateTime.Now,
+                        CreationBy = null,
+                        EmployeeType = EnumExtensions.GetEmployeeType(EmployeeType.Management),
+                    };
+
+                    var result = await employeeService.AddAsync(employeeDto);
+                    if (result.IsSuccess)
+                    {
+                        var loginService = new LoginedUserService();
+                        var loginResult = await loginService.Login("ali", "123");
+                        if (loginResult.IsSuccess)
+                        {
+
+                            CustomMessageBox.Success(Messages.Welcome +
+                                Environment.NewLine + "username = ali , password = 123");
+                            this.Hide();
+                            new FrmMain().ShowDialog();
+
+                            Close();
+                        }
+                    }
+                }
+                else
+                {
+                    CustomMessageBox.Error("کاربر مهمان قبلا ایجاد شده " + Environment.NewLine + "username = ali , password = 123");
+                }
             }
         }
 

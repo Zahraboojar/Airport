@@ -85,7 +85,6 @@
     <Compile Include="BaseEntity.cs" />
     <Compile Include="BaseTimeEntity.cs" />
     <Compile Include="BaseUserEntity.cs" />
-    <Compile Include="CheckIn.cs" />
     <Compile Include="CheckInStatus.cs" />
     <Compile Include="CrewAssignment.cs" />
     <Compile Include="Employee.cs" />
