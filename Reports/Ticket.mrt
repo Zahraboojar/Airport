@@ -7,7 +7,20 @@
     <Relations isList="true" count="0" />
     <Report isRef="0" />
     <Resources isList="true" count="0" />
-    <Variables isList="true" count="0" />
+    <Variables isList="true" count="12">
+      <value>,VarSeatNumber,VarSeatNumber,,System.String,,False,False,False,False</value>
+      <value>,VarTicketNumber,VarTicketNumber,,System.String,,False,False,False,False</value>
+      <value>,VarType,VarType,,System.String,,False,False,False,False</value>
+      <value>,VarClass,VarClass,,System.String,,False,False,False,False,,_x0032_5ef4396733f4966af001fb7cb4344ed</value>
+      <value>,VarAircraftModel,VarAircraftModel,,System.String,,False,False,False,False</value>
+      <value>,VarAircraft,VarAircraft,,System.String,,False,False,False,False</value>
+      <value>,VarQRCode,VarQRCode,,System.String,,False,False,False,False,,fc57aff9513a431b866fdcfd671d639d</value>
+      <value>,VarArrivalTime,VarArrivalTime,,System.String,,False,False,False,False</value>
+      <value>,VarTerminalGate,VarTerminalGate,,System.String,,False,False,False,False</value>
+      <value>,VarDepartureAirport,VarDepartureAirport,,System.String,,False,False,False,False</value>
+      <value>,VarArrivalAirport,VarArrivalAirport,,System.String,,False,False,False,False</value>
+      <value>,VarFullName,VarFullName,,System.String,,False,False,False,False</value>
+    </Variables>
   </Dictionary>
   <EngineVersion>EngineV2</EngineVersion>
   <GlobalizationStrings isList="true" count="0" />
@@ -60,19 +73,20 @@
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </Text3>
-        <VarArrivalAirport Ref="6" type="Text" isKey="true">
+        <h Ref="6" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>19,3.4,4.6,1</ClientRectangle>
+          <ClientRectangle>18,3.4,6.4,1</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Font>B Nazanin,11,Bold</Font>
           <Margins>0,0,0,0</Margins>
-          <Name>VarArrivalAirport</Name>
+          <Name>h</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
+          <Text>{VarArrivalAirport}</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
-        </VarArrivalAirport>
+        </h>
         <Text6 Ref="7" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>24.8,9,3,1</ClientRectangle>
@@ -92,6 +106,7 @@
           <ClientRectangle>0.8,2.4,4.6,4.2</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
+          <Icon>Airplane</Icon>
           <IconColor>68, 114, 196</IconColor>
           <Margins>0,0,0,0</Margins>
           <Name>VarLogo</Name>
@@ -126,45 +141,48 @@
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </Text8>
-        <VarDepartureAirport Ref="11" type="Text" isKey="true">
+        <s Ref="11" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>19,5,4.6,1</ClientRectangle>
+          <ClientRectangle>18,5,6.4,1</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Font>B Nazanin,11,Bold</Font>
           <Margins>0,0,0,0</Margins>
-          <Name>VarDepartureAirport</Name>
+          <Name>s</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
+          <Text>{VarDepartureAirport}</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
-        </VarDepartureAirport>
-        <VarTerminalGate Ref="12" type="Text" isKey="true">
+        </s>
+        <v Ref="12" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>19,7,4.6,1</ClientRectangle>
+          <ClientRectangle>18,7,6.4,1</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Font>B Nazanin,11,Bold</Font>
           <Margins>0,0,0,0</Margins>
-          <Name>VarTerminalGate</Name>
+          <Name>v</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
+          <Text>{VarTerminalGate}</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
-        </VarTerminalGate>
-        <VarArrivalTime Ref="13" type="Text" isKey="true">
+        </v>
+        <nn Ref="13" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>19,9,4.6,1</ClientRectangle>
+          <ClientRectangle>18,9,6.4,1</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Font>B Nazanin,11,Bold</Font>
           <Margins>0,0,0,0</Margins>
-          <Name>VarArrivalTime</Name>
+          <Name>nn</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
+          <Text>{VarArrivalTime}</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
-        </VarArrivalTime>
+        </nn>
         <Text13 Ref="14" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>13,3.6,2,1</ClientRectangle>
@@ -221,58 +239,62 @@
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </Text16>
-        <VarAircraft Ref="18" type="Text" isKey="true">
+        <a Ref="18" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>7,3.4,2,1</ClientRectangle>
+          <ClientRectangle>6,3.4,6,1</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Font>B Nazanin,11,Bold</Font>
           <Margins>0,0,0,0</Margins>
-          <Name>VarAircraft</Name>
+          <Name>a</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
+          <Text>{VarAircraft}</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
-        </VarAircraft>
-        <VarAircraftModel Ref="19" type="Text" isKey="true">
+        </a>
+        <kkk Ref="19" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>7,5.6,2,1</ClientRectangle>
+          <ClientRectangle>6,5.6,6,1</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Font>B Nazanin,11,Bold</Font>
           <Margins>0,0,0,0</Margins>
-          <Name>VarAircraftModel</Name>
+          <Name>kkk</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
+          <Text>{VarAircraftModel}</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
-        </VarAircraftModel>
-        <VarClass Ref="20" type="Text" isKey="true">
+        </kkk>
+        <c Ref="20" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>7,7.8,2,1</ClientRectangle>
+          <ClientRectangle>6,7.8,6,1</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Font>B Nazanin,11,Bold</Font>
           <Margins>0,0,0,0</Margins>
-          <Name>VarClass</Name>
+          <Name>c</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
+          <Text>{VarClass}</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
-        </VarClass>
-        <VarTicketNumber Ref="21" type="Text" isKey="true">
+        </c>
+        <l Ref="21" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>1.6,8.4,2,1</ClientRectangle>
+          <ClientRectangle>0.4,8.4,4.6,1</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Font>B Nazanin,11,Bold</Font>
           <Margins>0,0,0,0</Margins>
-          <Name>VarTicketNumber</Name>
+          <Name>l</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
+          <Text>{VarTicketNumber}</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
-        </VarTicketNumber>
+        </l>
         <Text21 Ref="22" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>1.6,9.6,2,1</ClientRectangle>
@@ -287,19 +309,20 @@
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </Text21>
-        <VarSeatNumber Ref="23" type="Text" isKey="true">
+        <q Ref="23" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>1.6,10.8,2,1</ClientRectangle>
+          <ClientRectangle>0.4,10.8,4.6,1</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Font>B Nazanin,11,Bold</Font>
           <Margins>0,0,0,0</Margins>
-          <Name>VarSeatNumber</Name>
+          <Name>q</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
+          <Text>{VarSeatNumber}</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
-        </VarSeatNumber>
+        </q>
         <Text23 Ref="24" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>13,10.6,2,1</ClientRectangle>
@@ -314,44 +337,45 @@
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
         </Text23>
-        <VarType Ref="25" type="Text" isKey="true">
+        <kk Ref="25" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>6.8,10.4,2,1</ClientRectangle>
+          <ClientRectangle>6.8,10.4,5.2,1</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Font>B Nazanin,11,Bold</Font>
           <Margins>0,0,0,0</Margins>
-          <Name>VarType</Name>
+          <Name>kk</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
+          <Text>{VarType}</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
-        </VarType>
-        <VarQRCode Ref="26" type="Image" isKey="true">
+        </kk>
+        <nnn Ref="26" type="Image" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>19.2,10.8,7.4,2</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <IconColor>68, 114, 196</IconColor>
           <Margins>0,0,0,0</Margins>
-          <Name>VarQRCode</Name>
+          <Name>nnn</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-        </VarQRCode>
-        <VarFullName Ref="27" type="Text" isKey="true">
+        </nnn>
+        <t Ref="27" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>20.8,0,7.2,1.2</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Font>B Nazanin,14,Bold</Font>
           <Margins>0,0,0,0</Margins>
-          <Name>VarFullName</Name>
+          <Name>t</Name>
           <Page isRef="2" />
           <Parent isRef="2" />
-          <Text>نام و نام خانوادگی</Text>
+          <Text>{VarFullName}</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
-        </VarFullName>
+        </t>
       </Components>
       <Conditions isList="true" count="0" />
       <Expressions isList="true" count="0" />
@@ -374,10 +398,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>6/4/2026 5:37:36 PM</ReportChanged>
+  <ReportChanged>6/5/2026 4:15:57 PM</ReportChanged>
   <ReportCreated>5/31/2026 1:51:55 PM</ReportCreated>
   <ReportFile>C:\Users\Arta\Documents\c# boojar\ManageAirportApp\Reports\Ticket.mrt</ReportFile>
-  <ReportGuid>2302aebbf3404ba590f4cfe93731f19e</ReportGuid>
+  <ReportGuid>17e1cf88201c429081726c705b937be7</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2022.1.1.0</ReportVersion>
